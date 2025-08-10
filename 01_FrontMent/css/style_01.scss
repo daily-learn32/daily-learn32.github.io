@@ -1,0 +1,103 @@
+// Variabel untuk warna dan font, agar mudah diubah
+$primary-green: hsl(75, 94%, 57%);
+$neutral-white: hsl(0, 0%, 100%);
+$neutral-grey: hsl(0, 0%, 20%);
+$neutral-dark-grey: hsl(0, 0%, 12%);
+$neutral-off-black: hsl(0, 0%, 8%);
+
+$family-primary: "Inter", sans-serif;
+$size-default: 14px;
+
+// Reset dasar dan gaya utama untuk body
+body {
+  font-family: $family-primary;
+  background-color: $neutral-off-black;
+  color: $neutral-white;
+  font-size: $size-default;
+
+  // Mengatur layout agar container berada di tengah
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+// Container utama untuk konten
+.profile-container {
+  background-color: $neutral-dark-grey;
+  width: 100%;
+  max-width: 380px;
+  padding: 40px;
+  border-radius: 12px;
+  box-sizing: border-box;
+  text-align: center;
+  margin: 20px;
+}
+
+// Header yang berisi info profil
+.profile-header {
+  margin-bottom: 24px;
+
+  .profile-picture {
+    margin-bottom: 24px;
+
+    img {
+      width: 88px;
+      height: 88px;
+      border-radius: 50%; // Membuat gambar menjadi bulat
+      object-fit: cover; // Memastikan gambar mengisi area tanpa distorsi
+    }
+  }
+
+  .profile-name {
+    font-size: 1.7rem;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  .profile-location {
+    color: $primary-green;
+    font-weight: 700;
+    margin: 8px 0 24px 0;
+  }
+
+  .profile-bio {
+    margin: 0;
+    font-weight: 400;
+  }
+}
+
+// Section untuk link sosial media
+.social-links {
+  display: flex;
+  flex-direction: column;
+  gap: 16px; // Jarak antar link
+
+  .link-item {
+    background-color: $neutral-grey;
+    color: $neutral-white;
+    position: relative; // Diperlukan agar posisi absolut pada ikon bekerja
+    text-decoration: none;
+    padding: 16px;
+    border-radius: 8px;
+    font-weight: 700;
+    transition: background-color 0.3s, color 0.3s;
+
+    // Efek saat kursor mouse di atas link
+    &:hover {
+      background-color: $primary-green;
+      color: $neutral-off-black;
+    }
+
+    // Atur posisi ikon
+    i {
+      position: absolute;
+      left: 16px; // Jarak dari kiri
+      top: 50%;
+      transform: translateY(-50%); // Agar ikon persis di tengah secara vertikal
+      font-size: 18px;
+      width: 1.75rem;
+    }
+  }
+}

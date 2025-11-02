@@ -1,0 +1,166 @@
+// VAR =====
+$primary-blue: hsl(215, 33%, 34%);
+$neutral-white: hsl(0, 0%, 100%);
+$neutral-grey: hsl(0, 0%, 50%);
+$neutral-black: hsl(0, 0%, 7%);
+
+$family-primary: "Figtree", sans-serif;
+$size-default: 16px;
+
+// Reset dasar dan gaya utama untuk body
+body {
+  font-family: $family-primary;
+  background-color: $primary-blue;
+  color: $neutral-black;
+  font-size: $size-default;
+  & * {
+    box-sizing: border-box;
+  }
+
+  // Mengatur layout agar container berada di tengah
+  display: grid;
+  place-content: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+// Container utama kartu
+.container {
+  perspective: 3000px;
+  width: 100%;
+  max-width: 400px;
+  margin: 20px;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+
+  // Card Flip
+  .card-flip {
+    position: relative;
+    transform-style: preserve-3d;
+    width: 100%;
+    height: 100%;
+    transition: transform 1.2s;
+  }
+
+  // (JS) Menambahkan class .is-flipped untuk memutar kartu
+  &.is-flipped .card-flip {
+    transform: rotateY(180deg);
+  }
+
+  // Sisi depan dan belakang kartu
+  .card-front,
+  .card-back {
+    width: 100%;
+    height: 100%;
+    padding: 24px;
+    border-radius: 20px;
+    border: 1px solid $neutral-black;
+    box-shadow: 8px 8px 2px rgba($neutral-black, 0.75); // Efek shadow awal
+    transition: box-shadow 0.3s ease-in-out;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+    background-color: $neutral-white;
+  }
+
+  .card-front {
+    position: relative; // Mengembalikan sisi depan ke alur dokumen
+    display: grid;
+  }
+
+  .card-back {
+    position: absolute; // Tetap absolut untuk menumpuk di belakang
+    top: 0;
+    transform: rotateY(180deg);
+    display: grid;
+    place-content: center;
+    text-align: center;
+  }
+
+  // Efek kartu hover - Shadow & Title color
+  &:hover .card-front .title,
+  &:hover .card-back .title {
+    color: $primary-blue;
+    transition: color 0.3s ease-in-out;
+  }
+  &:hover .card-front,
+  &:hover .card-back {
+    box-shadow: 16px 16px 8px rgba($neutral-black, 0.25);
+  }
+}
+
+// Card Front > Hero Img
+.card-front .hero_img {
+  aspect-ratio: 5 / 3;
+  border-radius: 10px;
+  overflow: hidden; // Memastikan gambar tidak keluar dari border-radius
+  margin-bottom: 24px;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; // Memastikan gambar mengisi area tanpa distorsi
+  }
+}
+
+// Card Front > Content
+.card-front .content {
+  display: grid;
+  gap: 12px;
+
+  // List tags
+  .tags {
+    display: flex;
+    gap: 12px; // Jarak antar tag
+
+    .tag {
+      background-color: $primary-blue;
+      color: $neutral-white;
+      padding: 6px 12px;
+      border-radius: 4px;
+      font-weight: 800;
+      font-size: 0.875rem;
+    }
+  }
+
+  // Tanggal hari ini
+  .today-date {
+    margin: 0;
+    font-size: 0.875rem;
+  }
+
+  // Judul utama
+  .title {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin: 0;
+    text-decoration: none;
+    color: $neutral-black;
+  }
+
+  // Paragraf deskripsi
+  .description {
+    color: $neutral-grey;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  // Profil penulis
+  .profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 12px;
+
+    .profile-picture {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+    }
+
+    .profile-name {
+      font-weight: 800;
+      font-size: 0.875rem;
+    }
+  }
+}

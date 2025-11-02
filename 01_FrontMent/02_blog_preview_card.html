@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog Preview Card</title>
+
+    <!-- Favicon untuk Title Halaman -->
+    <link rel="icon" href="./images/favicon-32x32.png" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;800&display=swap"
+      rel="stylesheet" />
+
+    <!-- Link ke file CSS (hasil compile dari SCSS) -->
+    <link rel="stylesheet" href="./css/style_02.css" />
+  </head>
+  <body>
+    <!-- Container Untuk Kartu === === -->
+    <article class="container">
+      <div class="card-flip">
+        <!-- Sisi Depan Kartu === -->
+        <div class="card-front">
+          <!-- Gambar hero dengan rasio 5:3 -->
+          <div class="hero_img">
+            <img
+              src="https://picsum.photos/id/55/500/300"
+              alt="Ilustrasi abstrak" />
+          </div>
+
+          <!-- Konten utama kartu -->
+          <div class="content">
+            <div class="tags">
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+              <span class="tag">JS</span>
+            </div>
+            <p class="today-date"></p>
+            <h2 class="title">The Foundation of Frontend Web Development</h2>
+            <p class="description">
+              Frontend development is the practice of producing the HTML, CSS,
+              and JavaScript for a website or web application so that a user can
+              see and interact with them directly.
+            </p>
+
+            <!-- Info profil penulis -->
+            <div class="profile">
+              <img
+                class="profile-picture"
+                src="https://picsum.photos/id/55/100"
+                alt="Foto profil" />
+              <span class="profile-name">Your Username</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sisi Belakang Kartu === -->
+        <div class="card-back">
+          <h2 class="title">Back of the card</h2>
+        </div>
+      </div>
+    </article>
+
+    <!-- Link ke file JavaScript -->
+    <script src="./js/script_02.js"></script>
+  </body>
+</html>

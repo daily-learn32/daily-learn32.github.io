@@ -1,0 +1,118 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Karla", sans-serif;
+  background-color: hsl(204, 43%, 93%);
+  font-size: 16px;
+  display: grid;
+  place-content: center;
+  min-height: 100vh;
+  margin: 1.5rem;
+}
+body .container-card {
+  display: grid;
+  max-width: 635px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 15px 30px rgba(0, 37, 46, 0.2);
+}
+
+.top {
+  background-color: white;
+  padding: 2.5rem;
+  display: grid;
+  gap: 1.25rem;
+}
+.top h1 {
+  color: hsl(31, 77%, 52%);
+  font-size: 1.5rem;
+  margin: 0;
+}
+.top h2 {
+  color: hsl(35, 77%, 62%);
+  font-size: 1.125rem;
+  margin: 0;
+}
+.top p {
+  color: hsl(218, 22%, 67%);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.bottom {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  color: white;
+}
+.bottom .side-left,
+.bottom .side-right {
+  padding: 2.5rem;
+  display: grid;
+  gap: 1rem;
+}
+.bottom .side-left {
+  background-color: hsl(31, 77%, 52%);
+}
+.bottom .side-left h3 {
+  font-size: 1.125rem;
+  margin: 0;
+}
+.bottom .side-left .price-container {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.bottom .side-left .price-container .price {
+  font-size: 2rem;
+  font-weight: 700;
+}
+.bottom .side-left .price-container .per-month {
+  opacity: 0.7;
+}
+.bottom .side-left p {
+  opacity: 0.9;
+}
+.bottom .side-left button {
+  background-color: hsl(35, 77%, 62%);
+  color: white;
+  border: none;
+  padding: 0.9rem;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: 700;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.bottom .side-left button:hover {
+  background-color: hsl(35, 77%, 57%);
+}
+.bottom .side-right {
+  background-color: hsl(31, 77%, 42%);
+}
+.bottom .side-right h3 {
+  font-size: 1.125rem;
+  margin: 0;
+}
+.bottom .side-right p {
+  margin: 0;
+  opacity: 0.75;
+  line-height: 1.5;
+  font-size: 0.875rem;
+}
+
+@media (max-width: 600px) {
+  .container-card .bottom {
+    grid-template-columns: 1fr;
+  }
+  .container-card .bottom .side-left {
+    order: 1;
+  }
+  .container-card .bottom .side-right {
+    order: 2;
+  }
+}

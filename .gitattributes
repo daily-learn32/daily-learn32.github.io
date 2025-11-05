@@ -1,0 +1,73 @@
+# =======================================================
+# 1. STANDAR AKHIR BARIS (LINE ENDINGS)
+# =======================================================
+# Ini adalah bagian terpenting untuk kompatibilitas lintas OS (Windows, Linux, macOS)
+# (Selalu gunakan LF di repositori, Git akan konversi ke CRLF di Windows saat checkout)
+
+# Baris Wajib: Git secara otomatis menentukan apakah file adalah teks dan mengelola konversi.
+* text=auto
+
+# Mencegah konversi Line Ending untuk semua file dalam folder bin/
+# (Berguna jika Anda menyimpan biner/file yang tidak boleh diubah)
+bin/** binary
+
+# Pastikan skrip shell (Unix) selalu menggunakan LF (Line Feed)
+*.sh text eol=lf
+*.bash text eol=lf
+*.zsh text eol=lf
+
+# Pastikan file Batch Windows selalu menggunakan CRLF (Carriage Return Line Feed)
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# =======================================================
+# 2. FILE BINARY (Matikan diff, merge, dan konversi)
+# =======================================================
+# Menandai file sebagai biner untuk menghemat sumber daya Git dan menghindari kerusakan
+
+# File Gambar
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.ico binary
+
+# File Terkompresi dan Aplikasi
+*.zip binary
+*.tar.gz binary
+*.tgz binary
+*.rar binary
+*.exe binary
+*.dll binary
+
+# File Font dan Dokumen
+*.pdf binary
+*.eot binary
+*.ttf binary
+*.woff binary
+*.woff2 binary
+
+# =======================================================
+# 3. PENGECUALIAN DAN STRATEGI MERGE KHUSUS
+# =======================================================
+
+# 🚫 Abaikan perbedaan (diff) untuk file lock yang sering berubah
+# File-file ini sering memiliki metadata yang tidak perlu dilihat perbedaannya
+composer.lock diff=
+package-lock.json diff=
+yarn.lock diff=
+Gemfile.lock diff=
+
+# 🛠️ Strategi Merge Khusus untuk Submodul
+# Ini memastikan bahwa Git memperlakukan pembaruan submodul sebagai perubahan ID commit
+.gitmodules merge=ours
+
+# 🖥️ Visualisasi Diff (Opsional: Membutuhkan konfigurasi custom diff driver di git config)
+# Memberikan tampilan diff yang lebih cerdas untuk struktur kode
+*.json diff=json
+*.xml diff=xml
+
+# ⚠️ Pengecualian Khusus (Jika Anda memiliki file teks tertentu yang ingin dipaksa LF)
+# Misalnya, file Markdown meskipun di Windows
+*.md text eol=lf

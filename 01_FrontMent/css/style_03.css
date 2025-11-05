@@ -1,0 +1,198 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Hanken Grotesk", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+body .container-card {
+  margin: 1rem;
+  display: flex;
+  max-width: 600px;
+  box-shadow: 0 4px 8px rgba(48.195, 59.211, 89.505, 0.2);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.left-side,
+.right-side {
+  width: 50%;
+  padding: 2rem;
+  display: grid;
+  gap: 1.5rem;
+}
+
+.left-side {
+  border-radius: 20px;
+  background: linear-gradient(to bottom, hsl(252, 100%, 67%), hsl(241, 81%, 54%));
+  color: hsl(0, 0%, 100%);
+  justify-items: center;
+  align-items: center;
+  text-align: center;
+}
+.left-side .title {
+  font-size: 1.25rem;
+  font-weight: 800;
+}
+.left-side .circle {
+  width: 150px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 50%;
+  background: linear-gradient(to bottom, hsl(256, 72%, 46%), hsla(241, 72%, 46%, 0));
+}
+.left-side .score {
+  font-size: 3em;
+  font-weight: 800;
+}
+.left-side .out-of {
+  color: rgba(255, 255, 255, 0.8);
+}
+.left-side .status {
+  font-size: 2rem;
+  font-weight: 800;
+}
+.left-side .status-description {
+  padding: 0 0.5rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.right-side {
+  grid-template-rows: max-content max-content auto;
+}
+.right-side .title {
+  font-size: 1.25rem;
+  font-weight: 800;
+}
+.right-side ul.skills-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 12px;
+}
+.right-side ul.skills-list li.skill.reaction {
+  background-color: hsla(0, 100%, 67%, 0.1);
+  color: hsl(0, 100%, 67%);
+}
+.right-side ul.skills-list li.skill.memory {
+  background-color: hsla(39, 100%, 56%, 0.1);
+  color: hsl(39, 100%, 56%);
+}
+.right-side ul.skills-list li.skill.verbal {
+  background-color: hsla(166, 100%, 37%, 0.1);
+  color: hsl(166, 100%, 37%);
+}
+.right-side ul.skills-list li.skill.visual {
+  background-color: hsla(234, 85%, 45%, 0.1);
+  color: hsl(234, 85%, 45%);
+}
+.right-side ul.skills-list li.skill {
+  display: flex;
+  align-items: center;
+  padding: 10px 14px;
+  border-radius: 5px;
+}
+.right-side ul.skills-list li.skill i {
+  margin-right: 10px;
+  width: 1.25rem;
+}
+.right-side ul.skills-list li.skill span {
+  margin-right: auto;
+}
+.right-side ul.skills-list li.skill .skill-score-container {
+  display: flex;
+  align-items: center;
+  color: black;
+  font-weight: bold;
+  font-weight: 700;
+}
+.right-side ul.skills-list li.skill .skill-score-container .skill-input {
+  width: 40px;
+  padding: 4px 6px 2px 0;
+  margin-right: 4px;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: right;
+  font-size: 1rem;
+  font-weight: 700;
+  -moz-appearance: textfield;
+}
+.right-side ul.skills-list li.skill .skill-score-container .skill-input::-webkit-outer-spin-button, .right-side ul.skills-list li.skill .skill-score-container .skill-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.right-side ul.skills-list li.skill .skill-score-container .total-score {
+  font-weight: 700;
+  color: hsl(224, 30%, 57%);
+}
+.right-side .calculate-button {
+  align-self: self-end;
+  background-color: hsl(224, 30%, 27%);
+  color: white;
+  width: 100%;
+  height: 2.75rem;
+  padding: 0 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 1.375rem;
+  cursor: pointer;
+}
+.right-side .calculate-button:hover {
+  background-color: hsl(224, 30%, 40%);
+}
+
+@media screen and (max-width: 640px) {
+  body .container-card {
+    margin: unset;
+    flex-direction: column;
+    box-shadow: none;
+    max-width: 640px;
+    border-radius: unset;
+  }
+  .left-side,
+  .right-side {
+    width: 100%;
+    gap: 2.5rem;
+  }
+  .left-side {
+    min-height: 100vh;
+    padding: 2rem 3rem;
+    border-radius: unset;
+    align-content: center;
+  }
+  .left-side .circle {
+    width: 200px;
+    height: 200px;
+  }
+  .left-side .score {
+    font-size: 4rem;
+    font-weight: 800;
+  }
+  .left-side .status-description {
+    padding: 0 2rem;
+    margin: 0 auto;
+  }
+  .right-side {
+    align-content: start;
+    padding: 3rem 3rem;
+  }
+  .right-side ul.skills-list {
+    gap: 1rem;
+  }
+}
+@media screen and (min-width: 580px) and (max-width: 640px) {
+  .left-side,
+  .right-side {
+    padding: 2rem 15vw;
+  }
+}

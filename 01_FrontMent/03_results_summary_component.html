@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Website Hasil Nilai</title>
+
+    <!-- Favicon untuk Title Halaman -->
+    <link rel="icon" href="./images/favicon-32x32.png" />
+    <!-- Google Fonts: Hanken Grotesk -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&display=swap"
+      rel="stylesheet" />
+    <!-- Link ke Font Awesome untuk ikon -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
+    <link rel="stylesheet" href="css/style_03.css" />
+  </head>
+  <body>
+    <div class="container-card">
+      <!-- Left Side === -->
+      <div class="left-side">
+        <h2 class="title">Your Result</h2>
+        <div class="circle">
+          <!-- JS -->
+          <span class="score"></span>
+          <span class="out-of">of 100</span>
+        </div>
+        <!-- JS -->
+        <p class="status"></p>
+        <!-- JS -->
+        <p class="status-description"></p>
+      </div>
+
+      <!-- Right Side === -->
+      <div class="right-side">
+        <h2 class="title">Summary</h2>
+        <ul class="skills-list">
+          <!-- 1 -->
+          <li class="skill reaction">
+            <i class="fa-solid fa-bolt-lightning"></i>
+            <span>Reaction</span>
+            <div class="skill-score-container">
+              <input
+                type="number"
+                class="skill-input"
+                value="80"
+                min="0"
+                max="100" />
+              <span class="total-score"> / 100</span>
+            </div>
+          </li>
+          <!-- 2 -->
+          <li class="skill memory">
+            <i class="fa-solid fa-brain"></i>
+            <span>Memory</span>
+            <div class="skill-score-container">
+              <input
+                type="number"
+                class="skill-input"
+                value="92"
+                min="0"
+                max="100" />
+              <span class="total-score"> / 100</span>
+            </div>
+          </li>
+          <!-- 3 -->
+          <li class="skill verbal">
+            <i class="fa-solid fa-comment-dots"></i>
+            <span>Verbal</span>
+            <div class="skill-score-container">
+              <input
+                type="number"
+                class="skill-input"
+                value="61"
+                min="0"
+                max="100" />
+              <span class="total-score"> / 100</span>
+            </div>
+          </li>
+          <!-- 4 -->
+          <li class="skill visual">
+            <i class="fa-solid fa-eye"></i>
+            <span>Visual</span>
+            <div class="skill-score-container">
+              <input
+                type="number"
+                class="skill-input"
+                value="72"
+                min="0"
+                max="100" />
+              <span class="total-score"> / 100</span>
+            </div>
+          </li>
+        </ul>
+        <!-- JS -->
+        <button class="calculate-button">Calculate</button>
+      </div>
+    </div>
+
+    <!-- SCRIPT JS === === -->
+    <script src="js/script_03.js"></script>
+  </body>
+</html>

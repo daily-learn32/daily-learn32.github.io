@@ -1,0 +1,238 @@
+// Variables
+$font-family: "Hanken Grotesk", sans-serif;
+
+$color-white: hsl(0, 0%, 100%);
+$color-dark-navy: hsl(224, 30%, 27%);
+$color-light-lavender: hsl(241, 100%, 89%);
+$color-pale-blue: hsl(221, 100%, 96%);
+$color-gray: hsl(224, 30%, 57%);
+
+$gradient-from: hsl(252, 100%, 67%);
+$gradient-to: hsl(241, 81%, 54%);
+$circle-gradient-from: hsla(256, 72%, 46%, 1);
+$circle-gradient-to: hsla(241, 72%, 46%, 0);
+
+// Mixins
+@mixin center-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// STYLE === ===
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font-family;
+  @include center-content;
+  min-height: 100vh;
+  margin: 0;
+
+  .container-card {
+    margin: 1rem;
+    display: flex;
+    max-width: 600px; // Contoh lebar container
+    box-shadow: 0 4px 8px rgba($color-dark-navy, 0.2);
+    border-radius: 20px;
+    overflow: hidden; // Ensure rounded corners work correctly
+  }
+}
+
+.left-side,
+.right-side {
+  width: 50%;
+  padding: 2rem;
+  display: grid;
+  gap: 1.5rem;
+}
+
+// Left Side ===
+.left-side {
+  border-radius: 20px;
+  background: linear-gradient(to bottom, $gradient-from, $gradient-to);
+  color: $color-white;
+  justify-items: center;
+  align-items: center;
+  text-align: center;
+
+  .title {
+    font-size: 1.25rem;
+    font-weight: 800;
+  }
+  .circle {
+    width: 150px;
+    height: 150px;
+    @include center-content;
+    flex-direction: column;
+    border-radius: 50%;
+    background: linear-gradient(
+      to bottom,
+      hsla(256, 72%, 46%, 1),
+      hsla(241, 72%, 46%, 0)
+    );
+  }
+  .score {
+    font-size: 3em;
+    font-weight: 800;
+  }
+  .out-of {
+    color: rgba($color-white, 0.8);
+  }
+  .status {
+    font-size: 2rem;
+    font-weight: 800;
+  }
+  .status-description {
+    padding: 0 0.5rem;
+    color: rgba($color-white, 0.8);
+  }
+}
+
+// Right Side ===
+.right-side {
+  grid-template-rows: max-content max-content auto;
+  .title {
+    font-size: 1.25rem;
+    font-weight: 800;
+  }
+  ul.skills-list {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: 12px;
+
+    // Skill Color
+    li.skill {
+      &.reaction {
+        background-color: hsla(0, 100%, 67%, 0.1);
+        color: hsl(0, 100%, 67%);
+      }
+      &.memory {
+        background-color: hsla(39, 100%, 56%, 0.1);
+        color: hsl(39, 100%, 56%);
+      }
+      &.verbal {
+        background-color: hsla(166, 100%, 37%, 0.1);
+        color: hsl(166, 100%, 37%);
+      }
+      &.visual {
+        background-color: hsla(234, 85%, 45%, 0.1);
+        color: hsl(234, 85%, 45%);
+      }
+    }
+    // Skill Style
+    li.skill {
+      display: flex;
+      align-items: center;
+      padding: 10px 14px;
+      border-radius: 5px;
+
+      i {
+        margin-right: 10px;
+        width: 1.25rem; // Menyamakan ruang ikon
+      }
+      span {
+        margin-right: auto; // Push score to the right
+      }
+      .skill-score-container {
+        display: flex;
+        align-items: center;
+        color: black;
+        font-weight: bold;
+        font-weight: 700;
+
+        .skill-input {
+          width: 40px;
+          padding: 4px 6px 2px 0;
+          margin-right: 4px;
+          border: none;
+          background-color: rgba($color-white, 0.8);
+          text-align: right;
+          font-size: 1rem;
+          font-weight: 700;
+          // Sembunyikan panah pada input number
+          -moz-appearance: textfield;
+          &::-webkit-outer-spin-button,
+          &::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+          }
+        }
+        .total-score {
+          font-weight: 700;
+          color: hsl(224, 30%, 57%);
+        }
+      }
+    }
+  }
+  .calculate-button {
+    align-self: self-end;
+    background-color: hsl(224, 30%, 27%);
+    color: white;
+    width: 100%;
+    height: 2.75rem;
+    padding: 0 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: calc(2.75rem / 2);
+    cursor: pointer;
+
+    &:hover {
+      background-color: hsl(224, 30%, 40%);
+    }
+  }
+}
+
+// @RESPONSIVE === ===
+@media screen and (max-width: 640px) {
+  body .container-card {
+    margin: unset;
+    flex-direction: column;
+    box-shadow: none;
+    max-width: 640px;
+    border-radius: unset;
+  }
+  .left-side,
+  .right-side {
+    width: 100%;
+    
+    gap: 2.5rem;
+  }
+  .left-side {
+    min-height: 100vh;
+    padding: 2rem 3rem;
+    border-radius: unset;
+    align-content: center;
+
+    .circle {
+      width: 200px;
+      height: 200px;
+    }
+    .score {
+      font-size: 4rem;
+      font-weight: 800;
+    }
+    .status-description {
+      padding: 0 2rem;
+      margin: 0 auto;
+    }
+  }
+  .right-side {
+    align-content: start;
+    padding: 3rem 3rem;
+    ul.skills-list {
+      gap: 1rem;
+    }
+  }
+}
+//
+@media screen and (min-width: 580px) and (max-width: 640px) {
+  .left-side,
+  .right-side {
+    padding: 2rem 15vw;
+  }
+}

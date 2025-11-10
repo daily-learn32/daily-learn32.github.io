@@ -5,4 +5,5 @@
 [02_blog_preview_card](https://daily-learn32.github.io/01_FrontMent/02_blog_preview_card.html) <br/>
 [03_results_summary_component](https://daily-learn32.github.io/01_FrontMent/03_results_summary_component.html) <br/>
 [04_single_price_grid_component](https://daily-learn32.github.io/01_FrontMent/04_single_price_grid_component.html) <br/>
+[05_four_card_feature_section](https://daily-learn32.github.io/01_FrontMent/05_four_card_feature_section.html) <br/>
 

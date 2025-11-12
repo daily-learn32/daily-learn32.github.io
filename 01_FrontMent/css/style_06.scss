@@ -1,0 +1,244 @@
+// =============================================
+// Variables
+// =============================================
+
+// Fonts
+$font-primary: "Poppins", sans-serif;
+
+// Colors
+$color-background: #1d1160;
+$color-text-primary: #fff;
+$color-text-secondary: #ccc;
+$color-button-bg: $color-text-primary;
+$color-button-text: $color-background;
+$color-button-hover-bg: orange; // A slightly darker white for hover
+
+// Sizing & Spacing
+$border-radius-button: 1.5rem;
+$border-radius-icon: 50%;
+
+// =============================================
+// Mixins
+// =============================================
+
+@mixin flex-container($justify: flex-start, $align: stretch, $gap: 0) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  gap: $gap;
+}
+
+// =============================================
+// Base & Reset Styles
+// =============================================
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font-primary;
+  color: $color-text-primary;
+  line-height: 1.6;
+
+  // Background styles
+  background-image: url("../images/gemini_bg1.png");
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  backdrop-filter: blur(20px);
+  background-color: rgba($color-background, 0.8); // Add slight transparency
+}
+
+.card-container {
+  display: grid;
+  justify-content: center;
+  gap: 0.5rem;
+  height: 100vh;
+  padding: 1.5rem 3rem;
+}
+
+// =============================================
+// Header Component
+// =============================================
+.card__header {
+  @include flex-container(left, center, 1rem);
+
+  h1 {
+    font-size: 2rem;
+    font-weight: 700;
+  }
+
+  i {
+    font-size: 2rem;
+  }
+}
+
+// =============================================
+// Main Content Component
+// =============================================
+.card__body {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  overflow: hidden;
+
+  .card__illustration-group {
+    width: 60%;
+    display: grid;
+    place-items: center;
+
+    // Illustration images
+    .card__illustration {
+      max-width: 100%;
+      height: auto;
+      grid-column: 1/2;
+      grid-row: 1/2;
+      &--desktop {
+        translate: -4% -4%;
+      }
+      &--mobile {
+        width: 25%;
+        translate: 130% 20%;
+      }
+    }
+  }
+
+  .card__content {
+    width: 40%;
+    padding-right: 2rem;
+    display: grid;
+    justify-items: left;
+    gap: 1.5rem;
+
+    h2 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: $color-text-primary;
+      line-height: 1.2;
+      max-width: 500px;
+    }
+
+    p {
+      font-size: 1rem;
+      max-width: 500px;
+      color: $color-text-secondary;
+    }
+
+    .card__action-button {
+      background-color: $color-button-bg;
+      color: $color-button-text;
+      display: grid;
+      align-items: center;
+      font-size: 1rem;
+      font-weight: 600;
+      border: none;
+      border-radius: $border-radius-button;
+      height: 3rem;
+      padding: 8px 32px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.35);
+
+      &:hover {
+        background-color: $color-button-hover-bg;
+        color: $color-text-primary;
+      }
+    }
+  }
+}
+
+// =============================================
+// Footer Component
+// =============================================
+.card__footer {
+  @include flex-container(right, center, 1rem);
+
+  .card__social-link {
+    color: $color-text-primary;
+    text-decoration: none;
+    font-size: 1.5rem;
+    border: 2px solid $color-text-primary;
+    border-radius: $border-radius-icon;
+    width: 46px;
+    height: 46px;
+    @include flex-container(center, center);
+    transition: all 0.2s ease;
+
+    &:hover {
+      background-color: $color-text-primary;
+      color: $color-background;
+    }
+  }
+}
+
+// =============================================
+// Media Queries (Responsive)
+// =============================================
+
+// Tablet (Lebar di bawah 1024px)
+@media (max-width: 1024px) {
+  .card-container {
+    padding: 1.5rem 2rem;
+  }
+  .card__body {
+    .card__illustration-group {
+      width: 55%;
+      .card__illustration--mobile {
+        translate: 110% 20%;
+      }
+    }
+    .card__content {
+      width: 45%;
+      padding-right: 0;
+    }
+  }
+}
+
+// Mobile (Lebar di bawah 768px)
+@media (max-width: 768px) {
+  body {
+    background-position: center center;
+  }
+  .card-container {
+    height: auto; // Allow content to scroll
+    min-height: 100vh;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+  .card__header {
+    i {
+      font-size: 1.75rem;
+    }
+    h1 {
+      font-size: 1.75rem;
+    }
+  }
+  .card__body {
+    flex-direction: column; // Image on top, text below
+    text-align: center;
+    gap: 3rem;
+
+    .card__content {
+      width: 100%;
+      justify-items: center; // Tombol dan teks menjadi di tengah
+      padding-right: 0; // Reset padding
+    }
+
+    .card__illustration-group {
+      width: 100%;
+    }
+  }
+  .card__footer {
+    justify-content: center; // Center social media icons
+    margin-top: 1rem;
+    .card__social-link {
+      width: 46px;
+      height: 46px;
+      font-size: 24px;
+    }
+  }
+}

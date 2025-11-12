@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>06 Huddle Landing Page</title>
+
+    <!-- Favicon untuk Title Halaman -->
+    <link rel="icon" href="./images/favicon-32x32.png" />
+
+    <!-- Google Fonts (Poppins) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet" />
+
+    <!-- Font Awesome untuk Ikon -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
+    <!-- Link ke file CSS (hasil kompilasi dari SCSS) -->
+    <link rel="stylesheet" href="css/style_06.css" />
+  </head>
+  <body>
+    <div class="card-container">
+      <!-- Header -->
+      <header class="card__header">
+        <i class="fa-solid fa-image"></i>
+        <h1>Wallpapers</h1>
+      </header>
+
+      <!-- Main Body -->
+      <main class="card__body">
+        <!-- Left Side: Illustrations -->
+        <section class="card__illustration-group">
+          <img
+            src="./images/gemini_desktopShadow.png"
+            alt="Desktop wallpaper example"
+            class="card__illustration card__illustration--desktop" />
+          <img
+            src="./images/gemini_phoneShadow.png"
+            alt="Mobile wallpaper example"
+            class="card__illustration card__illustration--mobile" />
+        </section>
+
+        <!-- Right Side: Promotional Details -->
+        <section class="card__content">
+          <h2>Discover Colorful Wallpapers</h2>
+          <p>
+            Personalize your desktop and smartphone with our high-quality
+            wallpaper collection. From natural landscapes to abstract designs,
+            find the perfect image for every mood.
+          </p>
+          <button class="card__action-button">View Collection</button>
+        </section>
+      </main>
+
+      <!-- Footer -->
+      <footer class="card__footer">
+        <a href="#" aria-label="Facebook" class="card__social-link"
+          ><i class="fa-brands fa-facebook-f"></i
+        ></a>
+        <a href="#" aria-label="Instagram" class="card__social-link"
+          ><i class="fa-brands fa-instagram"></i
+        ></a>
+        <a href="#" aria-label="YouTube" class="card__social-link"
+          ><i class="fa-brands fa-youtube"></i
+        ></a>
+      </footer>
+    </div>
+  </body>
+</html>

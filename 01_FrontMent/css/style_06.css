@@ -1,0 +1,184 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+  line-height: 1.6;
+  background-image: url("../images/gemini_bg1.png");
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  backdrop-filter: blur(20px);
+  background-color: rgba(29, 17, 96, 0.8);
+}
+
+.card-container {
+  display: grid;
+  justify-content: center;
+  gap: 0.5rem;
+  height: 100vh;
+  padding: 1.5rem 3rem;
+}
+
+.card__header {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  gap: 1rem;
+}
+.card__header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+.card__header i {
+  font-size: 2rem;
+}
+
+.card__body {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  overflow: hidden;
+}
+.card__body .card__illustration-group {
+  width: 60%;
+  display: grid;
+  place-items: center;
+}
+.card__body .card__illustration-group .card__illustration {
+  max-width: 100%;
+  height: auto;
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+.card__body .card__illustration-group .card__illustration--desktop {
+  translate: -4% -4%;
+}
+.card__body .card__illustration-group .card__illustration--mobile {
+  width: 25%;
+  translate: 130% 20%;
+}
+.card__body .card__content {
+  width: 40%;
+  padding-right: 2rem;
+  display: grid;
+  justify-items: left;
+  gap: 1.5rem;
+}
+.card__body .card__content h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.2;
+  max-width: 500px;
+}
+.card__body .card__content p {
+  font-size: 1rem;
+  max-width: 500px;
+  color: #ccc;
+}
+.card__body .card__content .card__action-button {
+  background-color: #fff;
+  color: #1d1160;
+  display: grid;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 1.5rem;
+  height: 3rem;
+  padding: 8px 32px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.35);
+}
+.card__body .card__content .card__action-button:hover {
+  background-color: orange;
+  color: #fff;
+}
+
+.card__footer {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  gap: 1rem;
+}
+.card__footer .card__social-link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.5rem;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  width: 46px;
+  height: 46px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  transition: all 0.2s ease;
+}
+.card__footer .card__social-link:hover {
+  background-color: #fff;
+  color: #1d1160;
+}
+
+@media (max-width: 1024px) {
+  .card-container {
+    padding: 1.5rem 2rem;
+  }
+  .card__body .card__illustration-group {
+    width: 55%;
+  }
+  .card__body .card__illustration-group .card__illustration--mobile {
+    translate: 110% 20%;
+  }
+  .card__body .card__content {
+    width: 45%;
+    padding-right: 0;
+  }
+}
+@media (max-width: 768px) {
+  body {
+    background-position: center center;
+  }
+  .card-container {
+    height: auto;
+    min-height: 100vh;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+  .card__header i {
+    font-size: 1.75rem;
+  }
+  .card__header h1 {
+    font-size: 1.75rem;
+  }
+  .card__body {
+    flex-direction: column;
+    text-align: center;
+    gap: 3rem;
+  }
+  .card__body .card__content {
+    width: 100%;
+    justify-items: center;
+    padding-right: 0;
+  }
+  .card__body .card__illustration-group {
+    width: 100%;
+  }
+  .card__footer {
+    justify-content: center;
+    margin-top: 1rem;
+  }
+  .card__footer .card__social-link {
+    width: 46px;
+    height: 46px;
+    font-size: 24px;
+  }
+}

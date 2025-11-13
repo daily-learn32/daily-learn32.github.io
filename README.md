@@ -8,3 +8,4 @@
 [05_four_card_feature_section](https://daily-learn32.github.io/01_FrontMent/05_four_card_feature_section.html) <br/>
 [06_huddle_landing_page](https://daily-learn32.github.io/01_FrontMent/06_huddle_landing_page.html) <br/>
 [07_faq_accordion](https://daily-learn32.github.io/01_FrontMent/07_faq_accordion.html) <br/>
+[08_base_apparel_coming](https://daily-learn32.github.io/01_FrontMent/08_base_apparel_coming.html) <br/>

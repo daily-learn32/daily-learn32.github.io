@@ -1,0 +1,242 @@
+// =============================================
+// Variabel
+// =============================================
+
+// Warna
+$color-background: #0d1117;
+$color-text-primary: #e6edf3;
+$color-text-secondary: #8b949e;
+$color-accent: #58a6ff;
+$color-button-bg: $color-accent;
+$color-button-text: #fff;
+$color-input-bg: #010409;
+$color-input-border: #30363d;
+
+// Font
+$font-primary: "Poppins", sans-serif;
+
+// =============================================
+// Mixins
+// =============================================
+
+@mixin flex-container(
+  $direction: row,
+  $justify: flex-start,
+  $align: stretch,
+  $gap: 0
+) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+  gap: $gap;
+}
+
+@mixin grid-container($columns: 1fr, $rows: auto, $gap: 0) {
+  display: grid;
+  grid-template-columns: $columns;
+  grid-template-rows: $rows;
+  gap: $gap;
+}
+
+// =============================================
+// Reset & Gaya Dasar
+// =============================================
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font-primary;
+  background-color: $color-background;
+  color: $color-text-primary;
+  line-height: 1.7;
+}
+
+// =============================================
+// Komponen Utama
+// =============================================
+
+// --- Container Utama ---
+.container {
+  @include grid-container(60% 40%, auto 1fr, 0rem);
+  min-height: 100vh;
+  width: 100%;
+
+  // Lokasi Grid
+  & {
+    .header {
+      grid-column: 1/2;
+      grid-row: 1/2;
+    }
+    .left {
+      grid-column: 1/2;
+      grid-row: 2/3;
+    }
+    .right {
+      grid-column: 2/3;
+      grid-row: 1/3;
+    }
+  }
+
+  // Header ---
+  .header {
+    @include flex-container(row, flex-start, center, 1.5rem);
+    padding: 2rem 7rem 0rem 6rem;
+
+    &__logo {
+      font-size: 3rem;
+      color: $color-accent;
+    }
+    &__title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      line-height: 1.4;
+      @include flex-container(column);
+    }
+  }
+  // Konten Kiri ---
+  .left {
+    @include grid-container(auto, auto auto 1fr, 1.5rem);
+    padding: 0rem 7rem 5rem 6rem;
+    margin-top: 8vh;
+
+    &__title {
+      @include grid-container(auto, auto auto, $gap: 0);
+      font-size: 3rem;
+      letter-spacing: 3px;
+      line-height: 1.3;
+      .top {
+        color: $color-accent;
+        font-weight: 400;
+      }
+      .bottom {
+        color: $color-text-primary;
+        font-weight: 600;
+      }
+    }
+    &__description {
+      font-size: 1rem;
+      color: $color-text-secondary;
+      max-width: 90%;
+    }
+
+    // --- Form Email ---
+    .form {
+      align-self: self-end;
+      @include flex-container(row, stretch, center);
+      margin-top: 1rem;
+      max-width: 450px;
+      width: 100%;
+      position: relative;
+
+      &__input,
+      &__button {
+        height: 3.5rem;
+        border-radius: 1.75rem;
+      }
+      &__input {
+        font-family: $font-primary;
+        font-size: 1rem;
+        width: 100%;
+        padding: 0.75rem 6.5rem 0.75rem 1.5rem;
+        border: 1px solid $color-input-border;
+        background-color: $color-input-bg;
+        color: $color-text-primary;
+        &:focus {
+          outline: none;
+          border-color: $color-accent;
+        }
+      }
+      &__button {
+        position: absolute;
+        right: 0;
+        padding: 0.75rem 2.5rem;
+        border: 1px solid $color-accent;
+        background-color: $color-button-bg;
+        box-shadow: 0 4px 15px rgba($color-accent, 0.3);
+        cursor: pointer;
+        transition: all 0.2s ease;
+
+        &:hover {
+          background-color: darken($color-accent, 10%);
+          transform: translateX(4px);
+          box-shadow: 0 6px 20px rgba($color-accent, 0.4);
+        }
+
+        i {
+          font-size: 1.5rem;
+          color: $color-button-text;
+        }
+      }
+    }
+  }
+  // Konten Kanan (Gambar) ---
+  .right {
+    width: 100%;
+    background-image: url("../images/gemini_pc1.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: $color-accent;
+  }
+}
+
+// =============================================
+// Media Queries (Responsif)
+// =============================================
+
+@media (max-width: 1024px) {
+  .container {
+    grid-template-columns: unset;
+    grid-template-rows: unset;
+    // Lokasi Grid
+    .header,
+    .left,
+    .right {
+      grid-column: unset;
+      grid-row: unset;
+    }
+
+    // Header
+    .header {
+      order: 1;
+      padding: 1rem 2rem;
+    }
+    // Left
+    .left {
+      justify-items: center;
+      order: 3;
+      padding: 3rem 2rem;
+      margin-top: 0;
+      width: 100%;
+      &__title {
+        font-size: 2.75rem;
+        text-align: center;
+      }
+      &__description {
+        max-width: 80%;
+        text-align: center;
+      }
+      .form {
+        padding: 2rem 0rem 1rem 0rem;
+        width: 75vw;
+        &__input {
+          font-size: 0.9rem;
+          padding: 0.75rem 5.5rem 0.75rem 1.5rem;
+        }
+        &__button {
+          padding: 0.75rem 2rem;
+        }
+      }
+    }
+    // Right
+    .right {
+      order: 2;
+      width: 100%;
+      min-height: 50vh;
+    }
+  }
+}

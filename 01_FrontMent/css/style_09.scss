@@ -1,0 +1,242 @@
+// =============================================
+// Variabel
+// =============================================
+
+// Warna
+$color-primary-red: hsl(0, 100%, 74%);
+$color-dark-red: #b22222;
+$color-accent-blue: hsl(248, 32%, 49%);
+$color-dark-blue: hsl(249, 10%, 26%);
+$color-grayish-blue: hsl(246, 25%, 77%);
+$color-white: #fff;
+
+// Font
+$font-primary: "Inter", sans-serif;
+
+// Shadow
+$shadow-y-down: 0 6px 0 rgba(0, 0, 0, 0.15);
+$shadow-y-down-button: 0 4px 0 darken($color-accent-blue, 10%);
+
+// =============================================
+// Mixins
+// =============================================
+
+@mixin flex-container(
+  $direction: row,
+  $justify: flex-start,
+  $align: stretch,
+  $gap: 0
+) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+  gap: $gap;
+}
+
+@mixin grid-container($columns: 1fr, $rows: auto, $gap: 0) {
+  display: grid;
+  grid-template-columns: $columns;
+  grid-template-rows: $rows;
+  gap: $gap;
+}
+
+// =============================================
+// Reset & Gaya Dasar
+// =============================================
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font-primary;
+  font-size: 16px;
+  color: $color-white;
+  background-image: url("../images/gemini_bg3.png");
+  background-size: cover;
+  background-position: center;
+  background-color: $color-primary-red;
+  // backdrop-filter: blur(5px);
+}
+
+// =============================================
+// Komponen Utama
+// =============================================
+
+.container {
+  background-color: rgba($color-primary-red, 0.5);
+  min-height: 100vh;
+  @include flex-container(row, center, center, 5rem);
+  padding: 3rem;
+
+  &__left,
+  &__right {
+    width: 50%;
+    max-width: 500px;
+  }
+
+  // --- Sisi Kiri ---
+  &__left {
+    @include grid-container(1fr, auto auto, 2rem);
+  }
+  &__title {
+    font-size: 3rem;
+    line-height: 1.1;
+  }
+  &__description {
+    line-height: 1.6;
+  }
+
+  // --- Sisi Kanan ---
+  &__right {
+    @include grid-container(1fr, auto auto, 2rem);
+  }
+}
+
+// --- Kotak Promosi ---
+.promo-box {
+  background-color: $color-dark-red;
+  padding: 1.125rem 3rem;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: $shadow-y-down;
+
+  &__text {
+    font-weight: 400;
+    line-height: 1.5;
+    color: rgba($color-white, 0.8);
+    strong {
+      font-weight: 600;
+      color: $color-white;
+    }
+  }
+}
+
+// --- Form Pendaftaran ---
+.signup-form {
+  background-color: $color-white;
+  padding: 2.5rem;
+  border-radius: 8px;
+  box-shadow: $shadow-y-down;
+  @include grid-container(1fr, auto, 1.25rem);
+
+  &__field {
+    position: relative;
+
+    // State saat terjadi error
+    &.error {
+      .signup-form__input-wrapper input {
+        border-color: $color-primary-red;
+        color: $color-primary-red;
+      }
+      .signup-form__error-icon,
+      .signup-form__error-message {
+        // opacity: 1;
+        display: grid;
+      }
+    }
+  }
+
+  &__input-wrapper {
+    position: relative;
+    @include flex-container(row, stretch, center);
+
+    input {
+      width: 100%;
+      padding: 1rem 3.75rem 1rem 1.5rem;
+      border-radius: 5px;
+      border: 1px solid $color-grayish-blue;
+      font-weight: 600;
+      font-family: $font-primary;
+      color: $color-dark-blue;
+
+      &:focus {
+        outline: none;
+        border-color: $color-accent-blue;
+      }
+    }
+  }
+
+  &__error-icon {
+    position: absolute;
+    right: 1.5rem;
+    font-size: 1.25rem;
+    color: $color-primary-red;
+    // opacity: 0;
+    display: none;
+    transition: opacity 0.2s ease;
+  }
+
+  &__error-message {
+    font-size: 0.75rem;
+    color: $color-primary-red;
+    text-align: right;
+    margin-top: 0.5rem;
+    font-style: italic;
+    // opacity: 0;
+    display: none;
+    transition: opacity 0.2s ease;
+  }
+
+  &__button {
+    width: 100%;
+    padding: 1.125rem 1.5rem;
+    background-color: $color-accent-blue;
+    color: $color-white;
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    box-shadow: $shadow-y-down-button;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+      background-color: lighten($color-accent-blue, 10%);
+    }
+  }
+
+  &__terms {
+    font-size: 0.75rem;
+    line-height: 1.5;
+    color: rgba($color-dark-blue, 0.6);
+    text-align: center;
+    padding: 0 1.5rem;
+
+    strong {
+      color: $color-primary-red;
+      cursor: pointer;
+    }
+  }
+}
+
+// =============================================
+// Media Queries (Responsif)
+// =============================================
+
+@media (max-width: 1024px) {
+  .container {
+    flex-direction: column;
+    gap: 4rem;
+    text-align: center;
+    padding: 5rem 2rem;
+
+    &__left {
+      width: 90%;
+    }
+    &__right {
+      width: 100%;
+    }
+
+    &__title {
+      font-size: 1.75rem;
+    }
+  }
+
+  .signup-form {
+    padding: 1.75rem 1.5rem;
+  }
+}

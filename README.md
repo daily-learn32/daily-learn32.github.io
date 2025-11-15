@@ -12,5 +12,6 @@
 [07_faq_accordion](https://daily-learn32.github.io/01_FrontMent/07_faq_accordion.html) <br/>
 [08_base_apparel_coming](https://daily-learn32.github.io/01_FrontMent/08_base_apparel_coming.html) <br/>
 [09_intro_component_with_sign-up](https://daily-learn32.github.io/01_FrontMent/09_intro_component_with_sign-up.html) <br/>
+[10_interactive_rating_component](https://daily-learn32.github.io/01_FrontMent/10_interactive_rating_component.html) <br/>
 
-
+### 02 Junior :

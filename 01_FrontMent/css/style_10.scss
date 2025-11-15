@@ -1,0 +1,255 @@
+// =============================================
+// Variabel
+// =============================================
+
+// Warna
+$color-primary: hsl(25, 97%, 53%);
+$color-white: hsl(0, 0%, 100%);
+$color-gray: hsl(217, 12%, 63%);
+$color-dark-blue: hsl(213, 19%, 18%);
+$color-very-dark-blue: hsl(216, 12%, 8%);
+$color-card-bg: hsl(215, 22%, 15%);
+
+// Font
+$font-primary: "Overpass", sans-serif;
+
+// Ukuran
+$size-default: 16px;
+
+// =============================================
+// Mixins
+// =============================================
+
+@mixin flex-container($justify: flex-start, $align: stretch, $gap: 0) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  gap: $gap;
+}
+
+@mixin grid-container($rows: auto, $gap: 0) {
+  display: grid;
+  grid-template-rows: $rows;
+  gap: $gap;
+}
+
+@mixin circle($size) {
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+  display: grid;
+  place-content: center;
+}
+
+// =============================================
+// Reset & Gaya Dasar
+// =============================================
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font-primary;
+  font-size: $size-default;
+  background-color: $color-very-dark-blue;
+  color: $color-gray;
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  padding: 3rem;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+// =============================================
+// Komponen Utama
+// =============================================
+
+.container {
+  width: 100%;
+  max-width: 410px;
+  perspective: 1000px; // Menambahkan perspektif untuk efek 3D
+}
+
+.card-flipper {
+  position: relative;
+  width: 100%;
+  display: grid;
+  transform-style: preserve-3d;
+  transition: transform 0.8s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+
+  &.is-flipped {
+    transform: rotateY(180deg);
+  }
+}
+
+.card {
+  border-radius: 1.5rem;
+  width: 100%;
+  height: 100%;
+  padding: 2rem;
+  box-shadow: 0px 0px 4px 0 white;
+  @include grid-container(auto, 1.5rem);
+  -webkit-backface-visibility: hidden; // Untuk browser Safari
+  backface-visibility: hidden;
+}
+
+.card--front {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  background: radial-gradient(circle at top right, $color-dark-blue, $color-very-dark-blue);
+}
+.card--back {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  background: radial-gradient(circle at top left, $color-dark-blue, $color-very-dark-blue);
+  transform: rotateY(180deg);
+}
+
+// --- Card Penilaian ---
+.rating-card {
+  // Header
+  &__header {
+    @include flex-container($justify: flex-start);
+  }
+  &__icon-wrapper {
+    @include circle(3rem);
+    background-color: $color-dark-blue;
+    color: $color-primary;
+    font-size: 1rem;
+  }
+  // Content
+  &__content {
+    @include grid-container(auto auto, 0.75rem);
+  }
+  &__title {
+    color: $color-white;
+    font-size: 1.75rem;
+  }
+  &__description {
+    line-height: 1.6;
+  }
+  // Form
+  &__form {
+    @include grid-container(auto auto, 2rem);
+  }
+  &__list {
+    @include flex-container($justify: space-between);
+  }
+  &__rating-item {
+    border: none;
+    @include circle(3.5rem);
+    background-color: $color-dark-blue;
+    color: $color-gray;
+    transition: color 0.2s ease;
+
+    // Efek
+    &:hover {
+      background-color: $color-gray;
+      color: $color-white;
+    }
+    &.active {
+      background-color: $color-white;
+      color: $color-primary;
+    }
+  }
+  &__submit-button {
+    width: 100%;
+    padding: 0.875rem;
+    border: none;
+    border-radius: 1.5rem;
+    background-color: $color-primary;
+    color: $color-white;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+
+    &:hover,
+    &:active {
+      background-color: $color-white;
+      color: $color-primary;
+      transform: scale(0.98);
+    }
+
+    &:disabled {
+      background-color: $color-gray;
+    }
+  }
+}
+
+// --- Card Terima Kasih ---
+.thank-you-card {
+  place-items: center;
+  text-align: center;
+  position: relative;
+  // Reset button
+  &__reset-button {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    border: none;
+    @include circle(3rem);
+    background-color: $color-dark-blue;
+    color: $color-gray;
+    font-size: 1rem;
+    transition: color 0.2s ease, transform 0.2s ease;
+
+    &:hover {
+      background-color: lighten($color-dark-blue, 10%);
+      color: $color-white;
+      transform: rotate(-90deg);
+    }
+  }
+  // Hero
+  &__hero {
+    max-width: 162px;
+  }
+  &__selection-result {
+    background-color: $color-dark-blue;
+    color: $color-primary;
+    padding: 0.75rem 1.5rem;
+    border-radius: 1.625rem;
+    font-size: $size-default;
+  }
+  // Content
+  &__content {
+    @include grid-container(auto auto, 0.75rem);
+  }
+  &__title {
+    color: $color-white;
+    font-size: 1.75rem;
+  }
+  &__description {
+    line-height: 1.6;
+  }
+}
+
+// =============================================
+// Media Queries (Responsif)
+// =============================================
+
+@media (max-width: 375px) {
+  .card {
+    padding: 1.5rem;
+  }
+
+  .rating-card__rating-item {
+    width: 2.6rem;
+    height: 2.6rem;
+    .fa-stack {
+      i {
+        font-size: 1.5rem;
+      }
+    }
+  }
+}

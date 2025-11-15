@@ -15,3 +15,4 @@
 [10_interactive_rating_component](https://daily-learn32.github.io/01_FrontMent/10_interactive_rating_component.html) <br/>
 
 ### 02 Junior :
+[11_fylo_data_storage_component](https://daily-learn32.github.io/02_FrontMent/11_fylo_data_storage_component.html) <br/>

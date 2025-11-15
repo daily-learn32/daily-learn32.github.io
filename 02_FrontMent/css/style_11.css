@@ -1,0 +1,195 @@
+/*------------------------------------*\
+    #VARIABLES
+\*------------------------------------*/
+/*------------------------------------*\
+    #MIXINS
+\*------------------------------------*/
+/*------------------------------------*\
+    #BASE & RESET
+\*------------------------------------*/
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Raleway", sans-serif;
+  font-size: 14px;
+  color: hsl(243, 100%, 93%);
+  background-color: hsl(229, 57%, 11%);
+  background-image: url("../images/gemini_bg4.png");
+  background-position: top;
+  background-size: cover;
+  min-height: 100vh;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: inherit;
+}
+
+/*------------------------------------*\
+    #COMPONENT: storage-component
+\*------------------------------------*/
+.storage-component {
+  display: grid;
+  gap: 1rem;
+  width: 100%;
+  max-width: 920px;
+}
+@media (min-width: 768px) {
+  .storage-component {
+    grid-template-columns: 1fr 2fr;
+    align-items: flex-end;
+    gap: 2rem;
+  }
+}
+.storage-component__main, .storage-component__details {
+  background-color: hsl(228, 56%, 26%);
+  padding: 2.5rem;
+  border-radius: 10px;
+}
+.storage-component__main {
+  border-radius: 10px 100px 10px 10px;
+}
+.storage-component__brand {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+.storage-component__brand .fa-layer-group {
+  font-size: 2rem;
+}
+.storage-component__actions {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+}
+.storage-component__action-btn {
+  background-color: hsl(229, 57%, 11%);
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  transition: background-color 0.2s ease;
+}
+.storage-component__action-btn:hover {
+  background-color: hsl(228, 56%, 36%);
+}
+.storage-component__details {
+  position: relative;
+  display: grid;
+  gap: 1rem;
+}
+.storage-component__usage-text {
+  text-align: center;
+}
+.storage-component__usage-text strong {
+  font-weight: 700;
+}
+@media (min-width: 768px) {
+  .storage-component__usage-text {
+    text-align: left;
+  }
+}
+.storage-component__status-container {
+  display: grid;
+  gap: 0.5rem;
+}
+.storage-component__progress-bar {
+  width: 100%;
+  height: 20px;
+  background-color: hsl(229, 57%, 19%);
+  border: 3px solid hsl(229, 57%, 19%);
+  border-radius: 100px;
+  overflow: hidden;
+}
+.storage-component__progress {
+  width: 81.5%;
+  height: 100%;
+  background: linear-gradient(to right, hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+  border-radius: 100px;
+  position: relative;
+}
+.storage-component__progress::after {
+  content: "";
+  position: absolute;
+  right: 2px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 10px;
+  background-color: white;
+  border-radius: 50%;
+}
+.storage-component__limits {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 700;
+}
+.storage-component__remaining {
+  position: absolute;
+  bottom: 0%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  background-color: white;
+  color: hsl(229, 7%, 55%);
+  padding: 1rem 1.5rem;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+}
+.storage-component__remaining span {
+  color: hsl(229, 57%, 11%);
+  font-size: 2.5rem;
+}
+@media (min-width: 768px) {
+  .storage-component__remaining {
+    top: -40px;
+    right: 2.5rem;
+    left: auto;
+    bottom: auto;
+    transform: translate(0%, 0%);
+    border-radius: 10px 10px 0 10px;
+  }
+  .storage-component__remaining::after {
+    content: "";
+    position: absolute;
+    bottom: -20px;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-top: 20px solid white;
+  }
+}

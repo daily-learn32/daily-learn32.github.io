@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>10 Interactive Rating Component</title>
+
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap"
+      rel="stylesheet" />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style_10.css" />
+  </head>
+  <body>
+    <main class="container">
+      <div class="card-flipper">
+        <!-- Card Penilaian (Depan) === === === -->
+        <section class="card rating-card card--front">
+          <!-- Header === -->
+          <header class="rating-card__header">
+            <div class="rating-card__icon-wrapper">
+              <i class="fa-solid fa-star"></i>
+            </div>
+          </header>
+          <!-- Content === -->
+          <div class="rating-card__content">
+            <h1 class="rating-card__title">How did we do?</h1>
+            <p class="rating-card__description">
+              Please let us know how we did with your support request. All
+              feedback is appreciated to help us improve our offering!
+            </p>
+          </div>
+          <!-- Form === -->
+          <form class="rating-card__form">
+            <div class="rating-card__list">
+              <!-- 1 -->
+              <button
+                type="button"
+                class="rating-card__rating-item"
+                data-value="1">
+                <span class="fa-stack"
+                  ><i class="fa-solid fa-star fa-stack-2x"></i
+                ></span>
+              </button>
+              <!-- 2 -->
+              <button
+                type="button"
+                class="rating-card__rating-item"
+                data-value="2">
+                <span class="fa-stack"
+                  ><i class="fa-solid fa-star fa-stack-2x"></i
+                ></span>
+              </button>
+              <!-- 3 -->
+              <button
+                type="button"
+                class="rating-card__rating-item"
+                data-value="3">
+                <span class="fa-stack"
+                  ><i class="fa-solid fa-star fa-stack-2x"></i
+                ></span>
+              </button>
+              <!-- 4 -->
+              <button
+                type="button"
+                class="rating-card__rating-item"
+                data-value="4">
+                <span class="fa-stack"
+                  ><i class="fa-solid fa-star fa-stack-2x"></i
+                ></span>
+              </button>
+              <!-- 5 -->
+              <button
+                type="button"
+                class="rating-card__rating-item"
+                data-value="5">
+                <span class="fa-stack"
+                  ><i class="fa-solid fa-star fa-stack-2x"></i
+                ></span>
+              </button>
+            </div>
+            <button type="submit" class="rating-card__submit-button">
+              Rate It
+            </button>
+          </form>
+        </section>
+
+        <!-- Card Terima Kasih (Belakang) === === === -->
+        <section class="card thank-you-card card--back">
+          <!-- Reset Button === -->
+          <button type="button" class="thank-you-card__reset-button">
+            <i class="fa-solid fa-rotate-left"></i>
+          </button>
+          <!-- Hero Img === -->
+          <img
+            src="./images/illustration-thank-you.svg"
+            alt="Thank you illustration"
+            class="thank-you-card__hero" />
+          <!-- Selection Result === -->
+          <p class="thank-you-card__selection-result">
+            You selected <span id="selected-rating">0</span> out of 5
+          </p>
+          <!-- Content === -->
+          <div class="thank-you-card__content">
+            <h1 class="thank-you-card__title">Thank you!</h1>
+            <p class="thank-you-card__description">
+              We appreciate you taking the time to give a rating. If you ever
+              need more support, don't hesitate to get in touch!
+            </p>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- Custom JS -->
+    <script src="js/script_10.js"></script>
+  </body>
+</html>

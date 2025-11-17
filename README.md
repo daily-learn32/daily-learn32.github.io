@@ -16,3 +16,4 @@
 
 ### 02 Junior :
 [11_fylo_data_storage_component](https://daily-learn32.github.io/02_FrontMent/11_fylo_data_storage_component.html) <br/>
+[12_news_homepage](https://daily-learn32.github.io/02_FrontMent/12_news_homepage.html) <br/>

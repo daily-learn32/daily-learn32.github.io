@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>12 News Homepage</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png" />
+    <link rel="stylesheet" href="css/style_12.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Oxanium:wght@700&display=swap"
+      rel="stylesheet" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Header === -->
+      <header class="header">
+        <h1 class="header__logo">Tech.</h1>
+        <nav class="header__nav" id="nav-menu">
+          <ul class="header__nav-list">
+            <li><a href="#" class="header__nav-link">Home</a></li>
+            <li><a href="#" class="header__nav-link">New</a></li>
+            <li><a href="#" class="header__nav-link">Popular</a></li>
+            <li><a href="#" class="header__nav-link">Trending</a></li>
+            <li><a href="#" class="header__nav-link">Categories</a></li>
+          </ul>
+          <div class="header__close" id="nav-close">
+            <svg viewBox="0 0 32 32" width="32" height="32">
+              <rect
+                x="4"
+                y="14"
+                width="24"
+                height="4"
+                rx="0"
+                transform="rotate(45 16 16)" />
+
+              <rect
+                x="4"
+                y="14"
+                width="24"
+                height="4"
+                rx="0"
+                transform="rotate(-45 16 16)" />
+            </svg>
+          </div>
+        </nav>
+        <div class="header__toggle" id="nav-toggle">
+          <svg viewBox="0 0 34 20" width="34" height="20">
+            <rect width="34" height="4" rx="0"></rect>
+            <rect y="8" width="34" height="4" rx="0"></rect>
+            <rect y="16" width="34" height="4" rx="0"></rect>
+          </svg>
+        </div>
+      </header>
+
+      <!-- Content Left === -->
+      <main class="content-left">
+        <div class="content-left__hero">
+          <img src="./images/gemini_bg6.jpeg" alt="Hero Image" />
+        </div>
+        <h2 class="content-left__title">The Dawn of Industry 4.0</h2>
+        <div class="content-left__text">
+          <p>
+            We are entering a new phase of industrial revolution, characterized
+            by the fusion of digital, biological, and physical worlds. Explore
+            how AI, IoT, and automation are reshaping our lives.
+          </p>
+          <button class="content-left__btn">READ MORE</button>
+        </div>
+      </main>
+
+      <!-- Content Right === -->
+      <aside class="content-right">
+        <h2 class="content-right__title">New</h2>
+        <div class="content-right__news-list">
+          <!-- 1 -->
+          <article class="content-right__news-item">
+            <h3><a href="#">AI in Healthcare</a></h3>
+            <p>How artificial intelligence is revolutionizing patient care.</p>
+          </article>
+          <!-- 2 -->
+          <article class="content-right__news-item">
+            <h3><a href="#">The Rise of Quantum Computing</a></h3>
+            <p>Unlocking unprecedented computational power.</p>
+          </article>
+          <!-- 3 -->
+          <article class="content-right__news-item">
+            <h3><a href="#">Sustainable Tech</a></h3>
+            <p>Innovations driving a greener future for our planet.</p>
+          </article>
+        </div>
+      </aside>
+
+      <!-- Content Bottom === -->
+      <footer class="content-bottom">
+        <!-- 1 -->
+        <div class="content-bottom__trending">
+          <div class="content-bottom__img">
+            <img src="./images/gemini_chipAi.jpeg" alt="Generative AI Impact" />
+          </div>
+          <div class="content-bottom__content">
+            <span class="content-bottom__number">01</span>
+            <h4 class="content-bottom__title">
+              <a href="#">Generative AI</a>
+            </h4>
+            <p>How is generative AI changing creative industries?</p>
+          </div>
+        </div>
+        <!-- 2 -->
+        <div class="content-bottom__trending">
+          <div class="content-bottom__img">
+            <img src="./images/gemini_glass.jpeg" alt="Next-Gen Wearables" />
+          </div>
+          <div class="content-bottom__content">
+            <span class="content-bottom__number">02</span>
+            <h4 class="content-bottom__title">
+              <a href="#">Next-Gen Wearables</a>
+            </h4>
+            <p>Exploring the future of smart rings and glasses.</p>
+          </div>
+        </div>
+        <!-- 3 -->
+        <div class="content-bottom__trending">
+          <div class="content-bottom__img">
+            <img
+              src="./images/gemini_futureCity.jpeg"
+              alt="The Metaverse in 2025" />
+          </div>
+          <div class="content-bottom__content">
+            <span class="content-bottom__number">03</span>
+            <h4 class="content-bottom__title">
+              <a href="#">The Metaverse in 2025</a>
+            </h4>
+            <p>Is the metaverse finally living up to the hype?</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script src="js/script_12.js"></script>
+  </body>
+</html>

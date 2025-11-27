@@ -1,0 +1,395 @@
+// $Variable =====
+// ================
+$clr-primary: hsl(61, 70%, 52%);
+$clr-secondary: hsl(202, 86%, 94%);
+$clr-tertiary: hsl(203, 41%, 72%);
+
+$clr-text-primary: hsl(200, 24%, 40%);
+$clr-text-secondary: hsl(200, 26%, 54%);
+$clr-text-light: hsl(0, 0%, 100%);
+
+$clr-bg-primary: hsl(0, 0%, 100%);
+$clr-bg-secondary: hsl(202, 55%, 16%);
+$clr-bg-tertiary: hsl(200, 30%, 25%);
+
+$clr-error: hsl(4, 69%, 50%);
+
+$font-primary: "Plus Jakarta Sans", sans-serif;
+
+// @Mixin =====
+// =============
+@mixin title-big {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: $clr-text-primary;
+}
+@mixin title-big2 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: $clr-primary;
+}
+@mixin title {
+  font-size: 1rem;
+  font-weight: 500;
+  color: $clr-text-secondary;
+  margin-bottom: 0.5rem;
+}
+@mixin block-input {
+  display: flex;
+  border: 1px solid $clr-tertiary;
+  border-radius: 0.25rem;
+  transition: border-color 0.2s;
+
+  &:hover {
+    border-color: $clr-primary;
+  }
+  &.focus {
+    border-color: $clr-primary;
+  }
+  &.error {
+    border-color: $clr-error;
+  }
+}
+
+// Base Style =====
+// ================
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $font-primary;
+}
+body {
+  background-color: $clr-secondary;
+
+  button {
+    border: none;
+    background: none;
+    cursor: pointer;
+  }
+  input {
+    border: none;
+    outline: none;
+    background: none;
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    font-weight: 700;
+    color: $clr-text-primary;
+  }
+  label {
+    cursor: pointer;
+  }
+  h1,
+  h2,
+  h3 {
+    font-weight: 700;
+  }
+  p {
+    color: $clr-text-secondary;
+    line-height: 1.6;
+  }
+  hr {
+    border: none;
+    height: 1px;
+    background-color: $clr-tertiary;
+  }
+}
+
+// STYLE =====
+// ===========
+.container {
+  display: grid;
+  background-color: $clr-bg-primary;
+}
+
+// Side Left
+.side-left {
+  padding: 2rem;
+  display: grid;
+  gap: 1.5rem;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__title-big {
+      @include title-big;
+    }
+    &__button-reset {
+      color: $clr-text-secondary;
+      text-decoration: underline;
+      font-size: 0.9rem;
+      &:hover {
+        color: $clr-text-primary;
+      }
+    }
+  }
+
+  &__input1 {
+    display: grid;
+    gap: 1.5rem;
+
+    &__child {
+      &__title {
+        @include title;
+      }
+      &__block-input {
+        @include block-input;
+
+        &__label {
+          display: grid;
+          place-content: center;
+          padding: 0 1rem;
+          font-weight: 700;
+          background-color: $clr-secondary;
+          color: $clr-text-secondary;
+          border-left: 1px solid $clr-tertiary;
+          transition: all 0.2s;
+        }
+
+        &:hover &__label,
+        &.focus &__label {
+          background-color: $clr-primary;
+          border-color: $clr-primary;
+          &__text,
+          &__icon {
+            color: $clr-text-primary;
+          }
+        }
+        &.focus &__label {
+          &__text,
+          &__icon {
+            color: $clr-text-light;
+          }
+        }
+        &.error &__label {
+          background-color: $clr-error;
+          border-color: $clr-error;
+          &__text,
+          &__icon {
+            color: $clr-text-light;
+          }
+        }
+
+        input[type="number"]::-webkit-outer-spin-button,
+        input[type="number"]::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
+        input[type="number"] {
+          -moz-appearance: textfield;
+        }
+      }
+      &__error-msg {
+        color: $clr-error;
+        font-size: 0.8rem;
+        margin-top: 0.5rem;
+        display: none;
+        &.show {
+          display: block;
+        }
+      }
+    }
+  }
+
+  &__input2 {
+    display: grid;
+    gap: 1rem;
+
+    &__title {
+      @include title;
+    }
+    &__block-input {
+      @include block-input;
+      padding: 0.75rem 1rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+
+      &.selected,
+      &.selected & {
+        background-color: $clr-bg-primary;
+        border-color: $clr-primary;
+        &__input {
+          accent-color: $clr-primary;
+        }
+        &__text {
+          color: $clr-primary;
+        }
+      }
+
+      &__input {
+        width: auto;
+        accent-color: $clr-primary;
+      }
+      &__text {
+        font-weight: 700;
+        color: $clr-text-primary;
+      }
+    }
+    &__error-msg {
+      color: $clr-error;
+      font-size: 0.8rem;
+      display: none;
+      &.show {
+        display: block;
+      }
+    }
+  }
+
+  &__buttons {
+    &__button-calculate {
+      background-color: $clr-primary;
+      color: $clr-bg-secondary;
+      padding: 1rem;
+      border-radius: 99px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.75rem;
+      width: 100%;
+      font-size: 1rem;
+      font-weight: 700;
+      transition: background-color 0.2s;
+
+      &:hover {
+        background-color: hsl(61, 70%, 65%);
+      }
+      &:active {
+        background-color: hsl(61, 70%, 45%);
+      }
+    }
+  }
+}
+
+// Side Right
+.side-right {
+  padding: 2rem;
+  background-color: $clr-bg-secondary;
+
+  &__empty {
+    display: grid;
+    justify-items: center;
+    text-align: center;
+    gap: 1rem;
+
+    &__illustration {
+      font-size: 8rem;
+      color: $clr-primary;
+      opacity: 0.2;
+    }
+    &__title-big {
+      @include title-big;
+      color: $clr-text-light;
+    }
+    &__paragraph {
+      color: $clr-tertiary;
+      max-width: 400px;
+    }
+  }
+
+  &__result {
+    display: none; // Hidden by default
+    gap: 1.5rem;
+
+    &__title-big {
+      @include title-big;
+      color: $clr-text-light;
+    }
+    &__paragraph {
+      color: $clr-tertiary;
+    }
+    &__block {
+      background-color: $clr-bg-tertiary;
+      padding: 1.5rem;
+      border-radius: 8px;
+      border-top: 4px solid $clr-primary;
+      display: grid;
+      gap: 1rem;
+
+      &__paragraph {
+        color: $clr-tertiary;
+      }
+      &__title-big2 {
+        @include title-big2;
+      }
+      &__title-big {
+        @include title-big;
+        font-size: 1.75rem;
+        color: $clr-text-light;
+      }
+    }
+  }
+
+  // JS toggle class
+  &.show-result {
+    .side-right__empty {
+      display: none;
+    }
+    .side-right__result {
+      display: grid;
+    }
+  }
+}
+
+// @RESPONSIVE =====
+// =================
+@media screen and (min-width: 768px) {
+  body {
+    display: grid;
+    min-height: 100vh;
+    padding: 3rem;
+  }
+  .container {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 640px;
+    overflow: hidden;
+    border-radius: 1.5rem 1.5rem 1.5rem 4rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  }
+  .side-left {
+    padding: 3rem;
+  }
+  .side-right {
+    padding: 3rem 4rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  body {
+    display: grid;
+    place-content: center;
+  }
+  .container {
+    max-width: 1000px;
+    grid-template-columns: 1fr 1fr;
+    border-radius: 1.5rem;
+  }
+  .side-left {
+    padding: 2.5rem;
+    &__input1 {
+      grid-template-columns: 1fr 1fr;
+      &__child:first-child {
+        grid-column: 1 / 3;
+      }
+    }
+    &__buttons {
+      &__button-calculate {
+        width: auto;
+        padding: 1rem 2.5rem;
+      }
+    }
+  }
+  .side-right {
+    padding: 2.5rem;
+    display: grid;
+    place-content: center;
+    border-bottom-left-radius: 4rem;
+
+    &.show-result {
+      align-content: start;
+    }
+  }
+}

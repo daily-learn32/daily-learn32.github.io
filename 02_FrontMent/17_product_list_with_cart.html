@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>17 Product List With Cart</title>
+    <link rel="icon" href="./images/favicon-32x32.png" />
+    <link rel="stylesheet" href="./css/style_17.css" />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@400;600;700&display=swap"
+      rel="stylesheet" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Menu -->
+      <main class="menu">
+        <h1 class="menu__title">Choose The Food You Want</h1>
+        <div class="menu__foods">
+          <!-- Food items will be injected by JavaScript -->
+        </div>
+      </main>
+
+      <!-- Cart -->
+      <aside class="cart">
+        <h2 class="cart__title">Your Cart (0)</h2>
+        <div class="cart__items">
+          <!-- Cart items will be injected by JavaScript -->
+          <div class="cart__items__empty">
+            <i class="cart__items__empty__icon fa-solid fa-cart-shopping"></i>
+            <p class="cart__items__empty__text">Your cart is empty.</p>
+          </div>
+        </div>
+        <div class="cart__order-total">
+          <p class="cart__order-total__text">Order Total</p>
+          <p class="cart__order-total__price">$0.00</p>
+        </div>
+        <div class="cart__text-info">
+          <i class="cart__text-info__icon fa-solid fa-circle-info"></i>
+          <p class="cart__text-info__paragraph">
+            This is a carbon-neutral delivery
+          </p>
+        </div>
+        <button class="cart__button-confirm">Confirm Order</button>
+      </aside>
+
+      <!-- Popup -->
+      <div class="popup">
+        <div class="popup__frame">
+          <div class="popup__frame__content">
+            <i class="popup__frame__content__icon fa-solid fa-circle-check"></i>
+            <h2 class="popup__frame__content__title">Order Confirmed</h2>
+            <p class="popup__frame__content__paragraph">
+              We hope you enjoy your food!
+            </p>
+            <div class="popup__frame__content__items">
+              <!-- Popup items will be injected by JavaScript -->
+            </div>
+            <div class="popup__frame__content__order-total">
+              <p class="popup__frame__content__order-total__text">
+                Order Total
+              </p>
+              <p class="popup__frame__content__order-total__price">.00</p>
+            </div>
+            <button class="popup__frame__content__button-new">
+              Start New Order
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./js/script_17.js"></script>
+  </body>
+</html>

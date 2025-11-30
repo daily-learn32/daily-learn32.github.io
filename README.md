@@ -22,3 +22,4 @@
 [15_mortgage_repayment_calc](https://daily-learn32.github.io/02_FrontMent/15_mortgage_repayment_calc.html) <br/>
 [16_time_tracking_dashboard](https://daily-learn32.github.io/02_FrontMent/16_time_tracking_dashboard.html) <br/>
 [17_product_list_with_cart](https://daily-learn32.github.io/02_FrontMent/17_product_list_with_cart.html) <br/>
+[18_notifications_page](https://daily-learn32.github.io/02_FrontMent/18_notifications_page.html) <br/>

@@ -1,7 +1,6 @@
 <script>
-  import heroImg from "$lib/images/gemini-insurance2.jpeg";
-  import patternLeft from "$lib/images/bg-pattern-intro-left-desktop.svg";
-  import patternRight from "$lib/images/bg-pattern-intro-right-desktop.svg";
+  import { base } from '$app/paths';
+
 
   const texts = $state({
     title: "Humanizing your insurance.",
@@ -13,8 +12,8 @@
 
 <section class="content1">
   <div class="bg-img">
-    <img src={patternLeft} alt="Pattern" />
-    <img src={patternRight} alt="Pattern" />
+    <img src="{base}/images/bg-pattern-intro-left-desktop.svg" alt="Pattern" />
+    <img src="{base}/images/bg-pattern-intro-right-desktop.svg" alt="Pattern" />
   </div>
   <div class="texts">
     <span class="line"></span>
@@ -24,7 +23,7 @@
   </div>
   <div class="hero-img">
     <span>
-      <img src={heroImg} alt="Hero Img" />
+      <img src="{base}/images/gemini-insurance2.jpeg" alt="Hero Img" />
     </span>
   </div>
 </section>

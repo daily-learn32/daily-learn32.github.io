@@ -1,5 +1,6 @@
 <script>
-  import { base } from "$app/paths";
+  import { base } from '$app/paths';
+
   let isMenuOpen = $state(false);
 </script>
 

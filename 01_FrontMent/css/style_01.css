@@ -31,7 +31,8 @@ body {
   width: 88px;
   height: 88px;
   border-radius: 50%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .profile-header .profile-name {
   font-size: 1.7rem;
@@ -74,4 +75,4 @@ body {
   transform: translateY(-50%);
   font-size: 18px;
   width: 1.75rem;
-}
+}/*# sourceMappingURL=style_01.css.map */

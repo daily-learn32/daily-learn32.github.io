@@ -27,8 +27,8 @@ body {
 // Container utama kartu
 .container {
   perspective: 3000px;
-  width: 100%;
   max-width: 400px;
+  width: 100%;
   margin: 20px;
   cursor: pointer;
   background-color: transparent;
@@ -162,5 +162,14 @@ body {
       font-weight: 800;
       font-size: 0.875rem;
     }
+  }
+}
+
+// @Responsive
+@media screen and (max-width: 768px) {
+  .container {
+    max-width: 400px;
+    width: calc(100% - 40px);
+    margin: 20px;
   }
 }

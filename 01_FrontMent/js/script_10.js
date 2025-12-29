@@ -8,13 +8,17 @@ document.addEventListener("DOMContentLoaded", () => {
   let selectedValue = null;
 
   // Menangani klik pada item penilaian
-  ratingItems.forEach((item) => {
-    item.addEventListener("click", (e) => {
-      e.preventDefault(); // Mencegah perilaku default tombol
+  ratingItems.forEach((item, itemIdx) => {
+    item.addEventListener("click", () => {
+      console.log("KLIK");
       // Hapus kelas 'active' dari semua item
-      ratingItems.forEach((btn) => btn.classList.remove("active"));
+      ratingItems.forEach((obj) => obj.classList.remove("active"));
       // Tambahkan kelas 'active' ke item yang diklik
-      item.classList.add("active");
+      ratingItems.forEach((obj, objIdx) => {
+        if (objIdx <= itemIdx) {
+          obj.classList.add("active");
+        }
+      });
       // Simpan nilai yang dipilih
       selectedValue = item.dataset.value;
     });

@@ -19,6 +19,7 @@ body {
 }
 .page-header__content {
   max-width: 600px;
+  width: 100%;
   color: #223;
   display: grid;
   text-align: center;
@@ -44,6 +45,7 @@ body {
   grid-template-rows: repeat(4, 1fr);
   gap: 2rem;
   place-items: center;
+  width: -moz-max-content;
   width: max-content;
   min-height: 70vh;
   padding: 40px;
@@ -136,7 +138,7 @@ body {
 
 @media (max-width: 1260px) {
   .page-header {
-    padding: 3rem;
+    padding: 3rem 2rem;
   }
   .department-container {
     grid-template-columns: repeat(2, 1fr);
@@ -150,15 +152,16 @@ body {
 }
 @media (max-width: 860px) {
   .page-header {
-    padding: 3rem;
+    padding: 3rem 2rem;
   }
   .department-container {
+    padding: 2rem 1rem;
     grid-template-columns: unset;
     grid-template-rows: unset;
   }
   .department-container .department-card {
-    max-width: 75vw;
+    max-width: 85vw;
     grid-row: unset;
     grid-column: unset;
   }
-}
+}/*# sourceMappingURL=style_05.css.map */

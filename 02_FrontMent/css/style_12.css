@@ -224,6 +224,7 @@ ul {
   gap: 0.5rem;
   width: 60%;
   height: 100%;
+  overflow: scroll;
 }
 .content-bottom__number {
   font-family: "Oxanium", cursive;
@@ -324,4 +325,4 @@ ul {
   .content-left__title {
     padding-right: 2rem;
   }
-}
+}/*# sourceMappingURL=style_12.css.map */

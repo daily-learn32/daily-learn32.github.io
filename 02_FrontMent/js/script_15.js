@@ -19,7 +19,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const currencyFormatter = new Intl.NumberFormat("en-US", {
     style: "currency",
     currency: "USD",
-    minimumFractionDigits: 2,
+    minimumFractionDigits: 1,
+    maximumFractionDigits: 1,
   });
 
   // --- FUNCTIONS ---

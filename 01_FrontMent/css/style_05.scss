@@ -24,7 +24,7 @@ $card-border-colors: (
 $border-radius-main: 8px;
 $card-padding: 2rem;
 $header-padding: 4rem 4rem 3rem 4rem;
-$header-padding-mobile: 3rem;
+$header-padding-mobile: 3rem 2rem;
 
 // =============================================
 // Mixins
@@ -70,6 +70,7 @@ body {
 
   &__content {
     max-width: 600px;
+    width: 100%;
     color: $color-text-dark;
     display: grid;
     text-align: center;
@@ -209,10 +210,11 @@ body {
     padding: $header-padding-mobile;
   }
   .department-container {
+    padding: 2rem 1rem;
     grid-template-columns: unset;
     grid-template-rows: unset;
     .department-card {
-      max-width: 75vw;
+      max-width: 85vw;
       grid-row: unset;
       grid-column: unset;
     }

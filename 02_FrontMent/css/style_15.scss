@@ -314,6 +314,7 @@ body {
       }
       &__title-big2 {
         @include title-big2;
+        font-size: 2.75rem
       }
       &__title-big {
         @include title-big;

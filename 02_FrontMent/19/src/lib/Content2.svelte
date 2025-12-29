@@ -1,4 +1,6 @@
 <script>
+  import { base } from '$app/paths';
+
   const datas = $state([
     {
       id: 1,

@@ -1,10 +1,11 @@
 <script>
-  import pattern from "$lib/images/bg-pattern-how-we-work-desktop.svg";
+  import { base } from '$app/paths';
+
 </script>
 
 <section class="content3">
   <div class="card">
-    <img src={pattern} alt="Pattern" />
+    <img src="{base}/images/bg-pattern-how-we-work-desktop.svg" alt="Pattern" />
     <h2>Find out more<br />about how we work</h2>
     <button>How we work</button>
   </div>

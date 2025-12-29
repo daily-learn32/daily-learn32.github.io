@@ -73,8 +73,8 @@ body {
 .content-card {
   grid-row: 1/3;
   grid-column: 1/-1;
-  width: 100%;
   max-width: 600px;
+  width: 100%;
   margin: 4rem auto;
   padding: 2rem;
   background-color: $color-background-card;
@@ -113,6 +113,7 @@ body {
   }
   &__secondary-title-container {
     @include flex-container(space-between, center);
+    gap: 1rem;
     color: $color-text-secondary;
     cursor: pointer;
     font-weight: 600;
@@ -126,6 +127,7 @@ body {
       height: 32px;
       font-size: 1.25rem;
       display: flex;
+      flex-shrink: 0;
       justify-content: center;
       align-items: center;
       transition: background-color 0.2s ease;
@@ -173,7 +175,7 @@ summary {
 // Tablet (Lebar di bawah 768px)
 @media (max-width: 768px) {
   .content-card {
-    width: 85%;
+    width: 90%;
     padding: 1.5rem;
 
     &__primary-title-container {
@@ -187,6 +189,10 @@ summary {
 
     &__accordion-title {
       font-size: 1.125rem;
+    }
+
+    &__accordion-content {
+      padding-right: 0rem;
     }
   }
 }

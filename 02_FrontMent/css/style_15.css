@@ -267,6 +267,7 @@ body hr {
   font-size: 3rem;
   font-weight: 700;
   color: hsl(61, 70%, 52%);
+  font-size: 2.75rem;
 }
 .side-right__result__block__title-big {
   font-size: 1.5rem;
@@ -335,4 +336,4 @@ body hr {
   .side-right.show-result {
     align-content: start;
   }
-}
+}/*# sourceMappingURL=style_15.css.map */

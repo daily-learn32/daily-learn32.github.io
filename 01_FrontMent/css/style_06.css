@@ -12,7 +12,8 @@ body {
   background-size: cover;
   background-position: center top;
   background-repeat: no-repeat;
-  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
   background-color: rgba(29, 17, 96, 0.8);
 }
 
@@ -181,4 +182,4 @@ body {
     height: 46px;
     font-size: 24px;
   }
-}
+}/*# sourceMappingURL=style_06.css.map */

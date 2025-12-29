@@ -153,17 +153,17 @@ body {
   }
   .container .header {
     order: 1;
-    padding: 1rem 2rem;
+    padding: 1rem 1.5rem;
   }
   .container .left {
     justify-items: center;
     order: 3;
-    padding: 3rem 2rem;
+    padding: 3rem 1.5rem;
     margin-top: 0;
     width: 100%;
   }
   .container .left__title {
-    font-size: 2.75rem;
+    font-size: 2.25rem;
     text-align: center;
   }
   .container .left__description {
@@ -172,7 +172,7 @@ body {
   }
   .container .left .form {
     padding: 2rem 0rem 1rem 0rem;
-    width: 75vw;
+    width: 80vw;
   }
   .container .left .form__input {
     font-size: 0.9rem;
@@ -186,4 +186,4 @@ body {
     width: 100%;
     min-height: 50vh;
   }
-}
+}/*# sourceMappingURL=style_08.css.map */

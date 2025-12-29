@@ -50,7 +50,6 @@ button {
   display: grid;
   grid-template-rows: auto;
   gap: 1.5rem;
-  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
 
@@ -105,6 +104,7 @@ button {
   justify-content: space-between;
   align-items: stretch;
   gap: 0;
+  gap: 0.75rem;
 }
 .rating-card__rating-item {
   border: none;
@@ -205,4 +205,4 @@ button {
   .rating-card__rating-item .fa-stack i {
     font-size: 1.5rem;
   }
-}
+}/*# sourceMappingURL=style_10.css.map */

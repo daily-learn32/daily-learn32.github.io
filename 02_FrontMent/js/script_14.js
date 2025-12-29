@@ -31,10 +31,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (!validateEmail(email)) {
       footerForm.classList.add("error");
-      messageEl.textContent = "Please enter a valid email address!";
+      messageEl.textContent = "Invalid email address!";
     } else {
       footerForm.classList.add("correct");
-      messageEl.textContent = "Your registration was successful.";
+      messageEl.textContent = "Successful.";
     }
   });
 

@@ -1,13 +1,13 @@
 <script>
-  import favicon from "$lib/images/favicon-32x32.png";
+  import { base } from '$app/paths';
   import "@fortawesome/fontawesome-free/css/all.min.css";
 
   let { children } = $props();
 </script>
 
 <svelte:head>
-  <title>Insurance Landing Page</title>
-  <link rel="icon" href={favicon} />
+  <title>19 Insurance Landing Page</title>
+  <link rel="icon" href="{base}/images/favicon-32x32.png" />
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

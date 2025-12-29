@@ -257,6 +257,7 @@ ul {
     gap: 0.5rem;
     width: 60%;
     height: 100%;
+    overflow: scroll;
   }
   &__number {
     font-family: $family-secondary;

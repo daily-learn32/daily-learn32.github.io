@@ -157,7 +157,7 @@ button {
   position: absolute;
   bottom: 0%;
   left: 50%;
-  transform: translate(-50%, 50%);
+  transform: translate(-50%, calc(50% + 6px));
   background-color: white;
   color: hsl(229, 7%, 55%);
   padding: 1rem 1.5rem;
@@ -192,4 +192,4 @@ button {
     border-left: 20px solid transparent;
     border-top: 20px solid white;
   }
-}
+}/*# sourceMappingURL=style_11.css.map */

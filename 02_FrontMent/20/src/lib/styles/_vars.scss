@@ -1,0 +1,149 @@
+// Module
+@use "sass:color";
+
+// Variabel
+$black1: hsl(227, 75%, 14%);
+$black2: hsl(225, 23%, 24%);
+$white2: hsl(0, 0%, 68%);
+$white1: hsl(0, 0%, 93%);
+$red1: hsl(3, 86%, 64%);
+$red2: hsl(3, 77%, 44%);
+
+$gradient-light: linear-gradient(180deg, #ebf2fc 0%, #eef8f9 100%);
+$gradient-dark: linear-gradient(180deg, #040918 0%, #091540 100%);
+
+$font: "Noto Sans";
+
+// Mixins
+@mixin text($clr: $white2) {
+  color: $clr;
+  font-size: 16px;
+}
+
+@mixin title1($clr: $white1) {
+  color: $clr;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+@mixin title2($clr: $white1) {
+  @include title1($clr);
+  font-size: 24px;
+}
+
+@mixin title3($clr: $white1) {
+  @include title1($clr);
+  font-size: 32px;
+}
+
+@mixin text-light() {
+  @include text($black2);
+}
+
+@mixin title1-light() {
+  @include title1($black1);
+}
+
+@mixin title2-light() {
+  @include title2($black1);
+}
+
+@mixin title3-light() {
+  @include title3($black1);
+}
+
+@mixin button($bg: $black2, $main: $white1, $act: $red1) {
+  outline: none;
+  border: 1px solid $white2;
+  border-radius: 99999px;
+  background: $bg;
+  color: $main;
+  padding: 0.5rem 1.25rem;
+  height: 2.75rem;
+  font-size: 18px;
+  display: grid;
+  place-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background: color.adjust($bg, $lightness: -6%);
+  }
+  &:active {
+    background: $act;
+    color: $main;
+  }
+
+  &.true {
+    background: $act;
+    border-color: $act;
+    &:hover {
+      background: color.adjust($act, $lightness: -10%);
+    }
+  }
+}
+
+@mixin toggle($bg: $black2, $main: $white1, $act: $red1) {
+  @include button($bg, $main, $act);
+  border: 2px solid $bg;
+  justify-content: start;
+  padding: 0;
+  width: 44px;
+  height: 24px;
+  align-items: center;
+  transition: all 0.3s;
+
+  > .cir {
+    border-radius: 99999px;
+    background: $main;
+    width: 20px;
+    height: 20px;
+    transition: margin-left 0.3s ease;
+  }
+  &.true > .cir {
+    margin-left: 20px;
+  }
+}
+
+@mixin button-light() {
+  @include button($white1, $black1, $red2);
+  border-color: $white2;
+  &.true,
+  &:active {
+    color: $white1;
+  }
+}
+
+@mixin toggle-light() {
+  @include toggle($white2, $white1, $act: $red2);
+}
+
+@mixin extension($bg: $black2, $main: $white1) {
+  display: grid;
+  align-content: space-between;
+  gap: 3rem;
+  padding: 1.5rem;
+  color: $main;
+  background: color.adjust($bg, $lightness: -8%);
+  border: 2px solid $bg;
+  border-radius: 1rem;
+
+  > .head {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    align-items: start;
+    gap: 1rem;
+  }
+
+  > .foot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+@mixin extension-light($bg: $white1, $main: $black2) {
+  @include extension($bg, $main);
+  background: $bg;
+  border-color: $white2;
+}

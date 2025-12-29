@@ -78,7 +78,7 @@ body {
   display: grid;
   place-items: center;
   min-height: 100vh;
-  padding: 5rem 1.5rem;
+  padding: 3rem 1.5rem;
 }
 
 button {
@@ -107,39 +107,35 @@ button {
   //
   &__profil {
     display: grid;
-    grid-template-columns: max-content 1fr;
+    grid-template-columns: unset;
     grid-template-rows: 1fr max-content;
-    align-items: center;
+    justify-items: center;
+    text-align: center;
     gap: 0.25rem 1rem;
     padding: 3rem 2rem;
     border-radius: 1rem;
     background: linear-gradient(to bottom right, $clr-bg2 -0%, $clr-bg3 100%);
 
     &__photo {
-      grid-column: 1/2;
-      grid-row: 1/3;
-      width: 4.5rem;
-      height: 4.5rem;
+      margin-bottom: 1.5rem;
+      width: 8rem;
+      height: 8rem;
       border: 3px solid $clr-text-primary;
       border-radius: 50%;
       display: grid;
       place-items: center;
       overflow: hidden;
-      background-color: $clr-bg3;
+      background-color: $clr-bg2;
       i {
-        font-size: 3.5rem;
-        transform: translateY(0.5rem);
+        font-size: 6.5rem;
+        transform: translateY(1rem);
       }
     }
     &__title {
-      align-self: self-end;
-      grid-column: 2/3;
       @include text;
       font-size: 0.9rem;
     }
     &__name {
-      align-self: self-start;
-      grid-column: 2/3;
       @include title-big;
     }
   }
@@ -181,7 +177,7 @@ button {
     overflow: hidden;
     padding-top: 2.5rem;
     position: relative;
-    // 
+    //
     &__header {
       position: absolute;
       top: 0;
@@ -214,7 +210,7 @@ button {
         color: darken($clr-blue, 20%);
       }
     }
-    // 
+    //
     &__content {
       position: relative;
       z-index: 2;
@@ -248,9 +244,8 @@ button {
       }
 
       &__times {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        display: grid;
+        gap: 0.75rem;
 
         &__main-time {
           @include title-big;
@@ -265,14 +260,41 @@ button {
 
 // @RESPONSIVE =====
 // =================
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 480px) {
+  .menu__profil {
+    text-align: left;
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    grid-template-rows: 1fr max-content;
+    justify-items: unset;
+    align-items: center;
+    gap: 0.25rem 1rem;
+    &__photo {
+      grid-column: 1/2;
+      grid-row: 1/3;
+      width: 4.5rem;
+      height: 4.5rem;
+      margin-bottom: unset;
+      i {
+        font-size: 3.5rem;
+        transform: translateY(0.5rem);
+      }
+    }
+    &__title {
+      align-self: self-end;
+      grid-column: 2/3;
+    }
+    &__name {
+      align-self: self-start;
+      grid-column: 2/3;
+    }
+  }
   .activities {
-    grid-template-columns: 1fr 1fr;
-
     &__activity__content__times {
-      display: grid;
-      justify-content: unset;
-      gap: 0.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
     }
   }
 }
@@ -324,6 +346,10 @@ button {
         align-content: space-between;
 
         &__times {
+          display: grid;
+          justify-content: unset;
+          align-items: left;
+          gap: 0.75rem;
           &__main-time {
             @include title-big;
           }

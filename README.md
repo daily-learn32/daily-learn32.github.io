@@ -25,3 +25,8 @@
 [18_notifications_page](https://daily-learn32.github.io/02_FrontMent/18_notifications_page.html) <br/>
 [19_insurance_landing_page](https://daily-learn32.github.io/02_FrontMent/19/build/index.html) <br/>
 [20_extension_manager](https://daily-learn32.github.io/02_FrontMent/20/build/index.html) <br/>
+
+## W3Schools - Challenges :
+
+### 11 HowTo :
+[01 W3Schools HowTo](https://daily-learn32.github.io/11_W3Schools/01/build/index.html) <br/>

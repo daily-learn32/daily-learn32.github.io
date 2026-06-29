@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>16 Time Tracking Dashboard</title>
+    <link rel="stylesheet" href="./css/style_16.css" />
+
+    <!-- Icon -->
+    <link rel="icon" type="image/png" href="./images/favicon-32x32.png" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap"
+      rel="stylesheet" />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  </head>
+  <body>
+    <!-- CONTAINER ===== -->
+    <div class="container">
+      <!-- MENU ===== -->
+      <div class="menu">
+        <!-- Profil -->
+        <div class="menu__profil">
+          <div class="menu__profil__photo">
+            <i class="fa-solid fa-user"></i>
+          </div>
+          <p class="menu__profil__title">Report for</p>
+          <h1 class="menu__profil__name">Yellow Shoes</h1>
+        </div>
+        <!-- Buttons -->
+        <div class="menu__track-buttons">
+          <button class="menu__track-buttons__button" data-timeframe="daily">
+            Daily
+          </button>
+          <button
+            class="menu__track-buttons__button active"
+            data-timeframe="weekly">
+            Weekly
+          </button>
+          <button class="menu__track-buttons__button" data-timeframe="monthly">
+            Monthly
+          </button>
+        </div>
+      </div>
+
+      <!-- ACTIVITIES ===== -->
+      <div class="activities">
+        <!-- Activities will be injected by JavaScript -->
+      </div>
+    </div>
+
+    <script src="./js/script_16.js"></script>
+  </body>
+</html>

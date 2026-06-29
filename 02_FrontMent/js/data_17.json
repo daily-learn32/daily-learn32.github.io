@@ -1,0 +1,65 @@
+[
+  {
+    "image": "./images/17_foods/gemini_food1.jpeg",
+    "name": "Fruits on a plate",
+    "category": "Dessert",
+    "price": 5.5,
+    "amount": 1
+  },
+  {
+    "image": "./images/17_foods/gemini_food2.jpeg",
+    "name": "Dark chocolate cake",
+    "category": "Dessert",
+    "price": 8.75,
+    "amount": 3
+  },
+  {
+    "image": "./images/17_foods/gemini_food3.jpeg",
+    "name": "Fried chicken",
+    "category": "Main Course",
+    "price": 7.99,
+    "amount": 0
+  },
+  {
+    "image": "./images/17_foods/gemini_food4.jpeg",
+    "name": "Sausage pizza",
+    "category": "Main Course",
+    "price": 14.5,
+    "amount": 1
+  },
+  {
+    "image": "./images/17_foods/gemini_food5.jpeg",
+    "name": "Rolled egg rice",
+    "category": "Main Course",
+    "price": 6.25,
+    "amount": 0
+  },
+  {
+    "image": "./images/17_foods/gemini_food6.jpeg",
+    "name": "Burger",
+    "category": "Main Course",
+    "price": 9.99,
+    "amount": 0
+  },
+  {
+    "image": "./images/17_foods/gemini_food7.jpeg",
+    "name": "Three-scoop ice cream",
+    "category": "Dessert",
+    "price": 4.9,
+    "amount": 2
+  },
+  {
+    "image": "./images/17_foods/gemini_food8.jpeg",
+    "name": "Cheesy pasta",
+    "category": "Main Course",
+    "price": 11.2,
+    "amount": 0
+  },
+  {
+    "image": "./images/17_foods/gemini_food9.jpeg",
+    "name": "French fries",
+    "category": "Side Dish",
+    "price": 3.5,
+    "amount": 0
+  }
+]

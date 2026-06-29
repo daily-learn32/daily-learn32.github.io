@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>09 Intro Component With Sign-up</title>
+
+    <!-- Favicon untuk Title Halaman -->
+    <link rel="icon" href="./images/favicon-32x32.png" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet" />
+
+    <!-- Font Awesome for Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
+    <!-- Link to CSS -->
+    <link rel="stylesheet" href="css/style_09.css" />
+  </head>
+  <body>
+    <main class="container">
+      <!-- ===== LEFT SIDE ===== -->
+      <section class="container__left">
+        <h1 class="container__title">Master Coding with AI-Powered Guidance</h1>
+        <p class="container__description">
+          Unlock your coding potential with intelligent assistance. Go beyond
+          traditional tutorials and experience real-time problem-solving
+          insights from AI.
+        </p>
+      </section>
+
+      <!-- ===== RIGHT SIDE ===== -->
+      <section class="container__right">
+        <div class="promo-box">
+          <p class="promo-box__text">
+            <strong>Start your AI coding journey free for 7 days</strong> then
+            $25/mo. thereafter
+          </p>
+        </div>
+
+        <form class="signup-form" id="signup-form" novalidate>
+          <!-- First Name -->
+          <div class="signup-form__field">
+            <div class="signup-form__input-wrapper">
+              <input
+                type="text"
+                id="fname"
+                placeholder="Your First Name"
+                required />
+              <i
+                class="fa-solid fa-circle-exclamation signup-form__error-icon"></i>
+            </div>
+            <p class="signup-form__error-message">First Name cannot be empty</p>
+          </div>
+
+          <!-- Last Name -->
+          <div class="signup-form__field">
+            <div class="signup-form__input-wrapper">
+              <input
+                type="text"
+                id="lname"
+                placeholder="Your Last Name"
+                required />
+              <i
+                class="fa-solid fa-circle-exclamation signup-form__error-icon"></i>
+            </div>
+            <p class="signup-form__error-message">Last Name cannot be empty</p>
+          </div>
+
+          <!-- Email -->
+          <div class="signup-form__field">
+            <div class="signup-form__input-wrapper">
+              <input
+                type="email"
+                id="email"
+                placeholder="Your Email Address"
+                required />
+              <i
+                class="fa-solid fa-circle-exclamation signup-form__error-icon"></i>
+            </div>
+            <p class="signup-form__error-message">
+              Looks like this is not an email
+            </p>
+          </div>
+
+          <!-- Password -->
+          <div class="signup-form__field">
+            <div class="signup-form__input-wrapper">
+              <input
+                type="password"
+                id="password"
+                placeholder="Create a Password"
+                required />
+              <i
+                class="fa-solid fa-circle-exclamation signup-form__error-icon"></i>
+            </div>
+            <p class="signup-form__error-message">Password must not be empty</p>
+          </div>
+
+          <button type="submit" class="signup-form__button">
+            Claim Your Free Trial
+          </button>
+          <p class="signup-form__terms">
+            By clicking the button, you are agreeing to our
+            <strong>Terms and Services</strong>
+          </p>
+        </form>
+      </section>
+    </main>
+
+    <!-- Link to JavaScript -->
+    <script src="js/script_09.js"></script>
+  </body>
+</html>

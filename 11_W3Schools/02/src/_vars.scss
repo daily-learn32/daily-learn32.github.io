@@ -1,0 +1,232 @@
+// Module
+@use "sass:color";
+
+// Variable =====
+$color-dark1: #1f1f2f;
+$color-dark2: color.adjust($color-dark1, $lightness: 5%);
+$color-dark3: color.adjust($color-dark1, $lightness: 10%);
+$color-dark4: color.adjust($color-dark1, $lightness: 15%);
+$transition: all 0.2s;
+
+// Shadow
+@mixin shadow($size: 8px) {
+  box-shadow: 0 0 $size 0 rgba(black, 0.25);
+}
+@mixin text-shadow($size: 2px) {
+  text-shadow: 0 0 $size rgba($color-dark1, 0.5);
+}
+
+//
+@mixin part($pad: 1.5rem) {
+  @include shadow();
+  background-color: $color-dark2;
+  padding: $pad;
+  display: grid;
+  gap: 1rem;
+}
+
+// Text
+@mixin textSmall() {
+  font-size: 14px;
+  color: white;
+}
+@mixin text() {
+  font-size: 16px;
+  color: white;
+}
+@mixin text2() {
+  @include text();
+  font-size: 18px;
+}
+
+// Title
+@mixin title() {
+  @include text();
+  font-size: 22px;
+}
+@mixin title2() {
+  @include text();
+  font-size: 28px;
+}
+
+// Button
+@mixin btn($bg: white, $clr: $color-dark1) {
+  border: none;
+  outline: none;
+  background-color: $bg;
+  color: $clr;
+  font-size: 1rem;
+  display: grid;
+  place-content: center;
+  padding: 0.75rem 1.5rem;
+  transition: $transition;
+  user-select: none;
+  cursor: pointer;
+  &:hover {
+    background-color: color.adjust($bg, $lightness: -15%);
+  }
+  &:active {
+    background-color: $clr;
+    color: $bg;
+  }
+}
+
+@mixin btnX($clr: white) {
+  @include btn();
+  @include text-shadow();
+  background-color: unset;
+  color: $clr;
+  &:hover {
+    background-color: unset;
+    color: color.adjust($clr, $lightness: -15%);
+  }
+  &:active {
+    background-color: unset;
+    color: #ff2222;
+  }
+}
+
+// Comp01 - Slideshow
+@mixin arrow($size: 16px) {
+  border: none;
+  outline: none;
+  display: grid;
+  place-items: center;
+  font-size: $size;
+  color: white;
+  background-color: unset;
+  @include text-shadow();
+  transition: $transition;
+  cursor: pointer;
+  user-select: none;
+  &:hover {
+    color: color.change(white, $alpha: 0.6);
+  }
+  &.active {
+    color: color.change(white, $alpha: 0.6);
+  }
+}
+@mixin dot($size: 16px) {
+  border: none;
+  outline: none;
+  display: grid;
+  place-items: center;
+  width: $size;
+  height: $size;
+  background-color: color.adjust($color-dark2, $lightness: 100%);
+  border-radius: 9999px;
+  transition: $transition;
+  cursor: pointer;
+  user-select: none;
+  &:hover {
+    background-color: color.adjust($color-dark2, $lightness: 40%);
+  }
+  &.active {
+    background-color: color.adjust($color-dark2, $lightness: 20%);
+  }
+}
+
+// Comp02 - Just Button
+@mixin btnPressed($bg: white, $clr: $color-dark1) {
+  @include btn($bg, $clr);
+  translate: 0 -8px;
+  border-radius: 8px;
+  border: 3px solid color.adjust($bg, $lightness: -15%);
+  box-shadow: 0 8px 0 0 color.adjust($bg, $lightness: -15%);
+  &:hover,
+  &:active {
+    box-shadow: 0 6px 0 0 color.adjust($bg, $lightness: -15%);
+    background-color: $bg;
+  }
+  &:hover {
+    translate: 0 -6px;
+  }
+  &:active {
+    color: $clr;
+    translate: 0;
+    box-shadow: 0 0 0 0 color.adjust($bg, $lightness: -15%);
+  }
+}
+@mixin btnArrow($bg: white, $clr: $color-dark1) {
+  @include btn($bg, $clr);
+  border-radius: 4px;
+  padding: 0.75rem;
+  display: flex;
+  align-items: center;
+  &:hover {
+    background-color: color.adjust($bg, $lightness: 5%);
+    gap: 4px;
+  }
+  &:hover > i {
+    width: 20px;
+    opacity: 1;
+  }
+  &:active {
+    background-color: $clr;
+    color: $bg;
+    translate: unset;
+  }
+  & > * {
+    transition: $transition;
+    &:first-child {
+      flex-grow: 1;
+    }
+    &:last-child {
+      flex-grow: 0;
+      width: 0px;
+      opacity: 0;
+    }
+  }
+}
+@mixin btnRipple($bg: white, $clr: $color-dark1) {
+  @include btn($bg, $clr);
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    content: "";
+    position: absolute;
+    background-color: rgba($clr, 1);
+    width: 250%;
+    height: 350%;
+    bottom: 0;
+    left: 0%;
+    opacity: 0;
+    transition: all 1s;
+  }
+  &:hover {
+    background-color: color.adjust($bg, $lightness: 5%);
+    gap: 4px;
+  }
+  &:active {
+    background-color: color.adjust($bg, $lightness: 5%);
+    color: $clr;
+  }
+  &:active::after {
+    width: 0%;
+    height: 0%;
+    opacity: 1;
+    transition: all 0s;
+  }
+}
+@mixin btn3D($bg: white, $clr: $color-dark1) {
+  @include btn($bg, $clr);
+  transition: $transition;
+  border-radius: 4px;
+  border: 4px solid rgba(white, 0.5);
+  border-color: rgba(white, 0.5) rgba(black, 0.5) rgba(black, 0.5)
+    rgba(white, 0.5);
+
+  &:hover {
+    background-color: color.adjust($bg, $lightness: 5%);
+  }
+  &:active {
+    background-color: $bg;
+    color: $clr;
+    border-color: rgba(black, 0.5) rgba(white, 0.5) rgba(white, 0.5)
+      rgba(black, 0.5);
+  }
+}
+
+// Comp03 - Fixed Sidebar

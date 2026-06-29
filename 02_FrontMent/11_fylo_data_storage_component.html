@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>11 Fylo Data Storage Component</title>
+
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png" />
+
+    <!-- Google Fonts: Raleway -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap"
+      rel="stylesheet" />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer" />
+
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="./css/style_11.css" />
+  </head>
+  <body>
+    <main class="storage-component">
+      <!-- LEFT === === -->
+      <section class="storage-component__main">
+        <!-- Brand -->
+        <div class="storage-component__brand">
+          <i class="fa-solid fa-layer-group"></i>
+          <h1>Fylo</h1>
+        </div>
+        <!-- Actions -->
+        <div class="storage-component__actions">
+          <button class="storage-component__action-btn" aria-label="File">
+            <i class="fa-solid fa-file"></i>
+          </button>
+          <button class="storage-component__action-btn" aria-label="Folder">
+            <i class="fa-solid fa-folder"></i>
+          </button>
+          <button class="storage-component__action-btn" aria-label="Upload">
+            <i class="fa-solid fa-cloud-arrow-up"></i>
+          </button>
+        </div>
+      </section>
+
+      <!-- RIGHT === === -->
+      <section class="storage-component__details">
+        <!-- Usage Text -->
+        <p class="storage-component__usage-text">
+          You've used <strong id="used-storage">815 GB</strong> of your storage
+        </p>
+        <!-- Status -->
+        <div class="storage-component__status-container">
+          <div class="storage-component__progress-bar">
+            <div class="storage-component__progress"></div>
+          </div>
+          <div class="storage-component__limits">
+            <span>0 GB</span>
+            <span id="total-storage">1000 GB</span>
+          </div>
+        </div>
+        <!-- Remaining -->
+        <div class="storage-component__remaining">
+          <span id="remaining-storage">185</span>
+          <p>GB Left</p>
+        </div>
+      </section>
+    </main>
+
+    <!-- SCRIPT JS === === === -->
+    <script src="./js/script_11.js"></script>
+  </body>
+</html>
